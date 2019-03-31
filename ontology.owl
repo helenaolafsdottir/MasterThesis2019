@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/masterThesisOntology#"
+     xml:base="http://www.semanticweb.org/masterThesisOntology"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/masterThesisOntology"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/masterThesisOntology#BelongsTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/masterThesisOntology#BelongsTo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/masterThesisOntology#FunctionalRequirementAndBehaviour"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/masterThesisOntology#NonFunctionalRequirementAndBehaviour"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/masterThesisOntology#Feature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/masterThesisOntology#ExplainedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/masterThesisOntology#ExplainedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/masterThesisOntology#FunctionalRequirementAndBehaviour"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/masterThesisOntology#NonFunctionalRequirementAndBehaviour"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/masterThesisOntology#UseCase"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/masterThesisOntology#UserStory"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/masterThesisOntology#PartOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/masterThesisOntology#PartOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/masterThesisOntology#Feature"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/masterThesisOntology#FunctionalRequirementAndBehaviour"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/masterThesisOntology#NonFunctionalRequirementAndBehaviour"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/masterThesisOntology#RequirementGeneral"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/masterThesisOntology#UseCase"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/masterThesisOntology#RequirementAnalysis"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/masterThesisOntology#Feature -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/masterThesisOntology#Feature"/>
+    
+
+
+    <!-- http://www.semanticweb.org/masterThesisOntology#FunctionalRequirementAndBehaviour -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/masterThesisOntology#FunctionalRequirementAndBehaviour">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/masterThesisOntology#BelongsTo"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/masterThesisOntology#Feature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/masterThesisOntology#NonFunctionalRequirementAndBehaviour -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/masterThesisOntology#NonFunctionalRequirementAndBehaviour"/>
+    
+
+
+    <!-- http://www.semanticweb.org/masterThesisOntology#RequirementAnalysis -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/masterThesisOntology#RequirementAnalysis"/>
+    
+
+
+    <!-- http://www.semanticweb.org/masterThesisOntology#RequirementGeneral -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/masterThesisOntology#RequirementGeneral"/>
+    
+
+
+    <!-- http://www.semanticweb.org/masterThesisOntology#UseCase -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/masterThesisOntology#UseCase"/>
+    
+
+
+    <!-- http://www.semanticweb.org/masterThesisOntology#UserStory -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/masterThesisOntology#UserStory"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/masterThesisOntology#Feature"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/masterThesisOntology#FunctionalRequirementAndBehaviour"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/masterThesisOntology#NonFunctionalRequirementAndBehaviour"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/masterThesisOntology#RequirementGeneral"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/masterThesisOntology#UseCase"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

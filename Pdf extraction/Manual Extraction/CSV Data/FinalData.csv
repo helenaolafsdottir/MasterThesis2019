@@ -1,0 +1,861 @@
+﻿2 Requirement Analysis|requirement|r-general|r-general|r-general||
+In order to start gathering requirements, first it is necessary to identify each group affected by this project and understand everyone’s needs (section Stakeholders Analysis 2.1).|requirement|r-general|r-general|r-general||
+With that information in hand, an initial list of the desired functional and non-functional requirements (see sections Functional Requirements 2.2 and Non-Functional Requirements 2.3) can be put into the Product Backlog in the form of user stories|requirement|r-general|r-general|r-general||
+Every sprint these requirements may change, reason why in this section are described only the final requirements that are part of the current Product Backlog of the project (see Appendix B Product Backlog).|document organisation|document organisation|document organisation|document organisation||
+2.1 Stakeholder Analysis|domain|stakeholder|stakeholder|stakeholder||
+Potential clients of the project, simplified as “clients” from now on, are companies in need of an e-commerce solution, especially those looking for an interface from where to sell goods or services to individuals or other companies.|domain|stakeholder|stakeholder|stakeholder||
+They need a system that satisfies their current requirements and allows them to easily implement future required functionalities.|requirement|r-general|r-general|r-general||
+They hire developers, usually working in agencies, to build these tailored applications.|uncertain|uncertain|uncertain|uncertain||
+Potential users of the template are precisely developers, who need to implement a web-shop or a similar application.|domain|stakeholder|stakeholder|stakeholder||
+They might have to decide whether to develop a web-shop based on SPHERE.IO Play SDK.|uncertain|uncertain|uncertain|uncertain||
+They may want to use the template as a live documentation of how to use the system or directly use it as a bootstrap project on which to build their own web-shop.|uncertain|uncertain|uncertain|uncertain||
+They need to easily understand the sample code and quickly identify those lines of code with shop logic coming from SPHERE.IO.|requirement|non-functional|non-functional|non-functional||
+Code quality and correct use of technologies may be important for them.|requirement|non-functional|non-functional|non-functional||
+End users or customers, equally mentioned as “users” and “customers” in this document, are those actors of the system who would buy in the web-shop in case it went live.|domain|stakeholder|stakeholder|stakeholder||
+Even being an hypothetical situation, this template will be used as a bootstrap project so eventually it will become a real web-shop with end users.|uncertain|uncertain|uncertain|uncertain||
+With no other specific information about these users, it can only be assumed that they need an intuitive layout that allows them to shop with ease in a few clicks.|system|ui design|u-architecture|u-architecture||directive
+Inside the company there are two major stakeholders: the SPHERE.IO product owners and the developer team.|domain|stakeholder|stakeholder|stakeholder||
+The product owners need a final product where all the platform features are implemented in order to measure the actual progress of the project.|domain|stakeholder|stakeholder|stakeholder||directive
+This product also allows them to have a sample web-shop to show to potential clients in meetings and conferences even before the platform is released.|domain|stakeholder|stakeholder|stakeholder||
+Their primary need towards the template is to verify that their implementation is adjusting to both developers and clients needs.|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+They might create temporal limitations on the template design, but at the same time any suggestion may be quickly adopted with no need to change the web-shop requirements.|uncertain|uncertain|uncertain|uncertain||
+2.2 FUNCTIONAL REQUIREMENTS|requirement|r-general|r-general|r-general||
+In order to prove the value of the platform and identify any possible lack of functionality, the application should have all the common features of a regular web-shop.|requirement|r-general|r-general|r-general|rationale|directive
+Accordingly, it has been considered that the initial appropriate set of functionalities for this project include those related to browsing and purchasing products, as well as management of a customer account.|requirement|feature|feature|feature||
+The detailed behavior expected for the web-shop is described below.|document organisation|document organisation|document organisation|document organisation||
+In the home page all products are displayed sorted by popularity.|system|ui design|u-architecture|u-architecture||
+From here the user can select a category; then all products belonging to that category or any descendent will be displayed.|requirement|use case|use case|use case||
+Whenever a set of products is listed, those products on sale will be highlighted and the user will be given the option to sort and filter amongst all products.|requirement|use case|use case|use case||
+The sorting can be performed by name or price, and the filtering by price and color.|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+Each product thumbnail consists of a picture of the product, its name and price, as well as a list of all color variants available.|system|ui design|u-architecture|u-architecture||
+Clicking on a product thumbnail redirects the user to the product detail page, where besides name and price also a description is shown.|requirement|use case|use case|use case||
+Here the user is able to select any color and size to visualize the corresponding picture.|requirement|use case|use case|use case||
+In any moment the user can add the selected product to the shopping cart, afterwards the updated cart contents and total price will be displayed.|requirement|use case|use case|use case||
+Accessing the cart details also grants the user the possibility to change the number of units of an item or remove any particular item from the shopping cart.|requirement|use case|use case|use case||
+From here the user can choose to start the checkout process, where he is asked to fill a form with shipping information (i.e. shipping address and method) and billing information (i.e. billing address and payment data).|requirement|use case|use case|use case||
+During the checkout process the order summary (i.e. the list of purchased items and pricing details) is displayed all along and kept up to date.|system|ui design|u-architecture|u-architecture||
+Right before finishing the checkout process, the user is informed of all introduced shipping and billing information as well as the order summary.|requirement|use case|use case|use case||
+Once the checkout process is finished, another summary is shown along with a successful purchase message.|requirement|use case|use case|use case||
+The user can decide to sign up in our systems, in which case he must provide his full name, email address and a password.|requirement|use case|use case|use case||
+After signing up he is redirected to his user profile, where he can update his personal data, change his password, manage his address book or review his previous orders in detail.|requirement|use case|use case|use case||
+The address book allows the user to store a set of postal addresses that can later be selected as shipping or billing address in the checkout process.|requirement|use case|use case|use case||
+The user is allowed to add new addresses to the address book, as well as update or remove any stored address.|requirement|use case|use case|use case||
+While logged in, the user can choose to log out in order to become an anonymous customer.|requirement|use case|use case|use case||
+In any moment, he can log in again providing his email address and password.|requirement|use case|use case|use case||
+In case the user forgot his password, he can request to recover it by entering his email address, in which case an email is then sent to the address provided containing a web link can then be accessed within the next hour, where the user can provide a new password.|requirement|use case|use case|use case||
+2.3 Non-functional requirements|requirement|r-general|r-general|r-general||
+In its first stage, the web-shop template is required mainly to analyze the platform capabilities, show code examples to developers and attract potential customers.|requirement|r-general|r-general|r-general||
+For this reason all nonfunctional requirements are highly focused on those areas.|requirement|r-general|r-general|r-general|rationale|
+Other areas of great importance as well, such as compatibility and performance, are left aside from the current project because of the excessive workload that it means.|requirement|non-functional|non-functional|non-functional||
+From a developer point of view the quality of the code takes a very important role, so it should be well organized, easy to understand and reusable.|development process|development practice|development practice|development practice|rationale|directive
+Therefore it would be considered a good practice to use variables and functions with self-explanatory names and keep a well commented code.|development process|development practice|development practice|development practice|rationale|
+To the extent possible, the generic shop logic should be separated from the most specific code in order to facilitate the use of it as a live documentation of the platform.|system|structure|s-architecture|s-architecture|rationale|directive
+The platform should allow to test any web application built on top of it.|development process|QA|testing|testing||directive
+In order to prove it is allowed, the template should be completed with automated functional tests, being careful of keeping these tests independent from the backend data in use.|development process|QA|testing|testing|rationale|
+That way a change in the data, very likely to happen in a template web-shop, will not affect the results.|uncertain|uncertain|uncertain|uncertain|rationale|
+The same principle should be applied to the code in general, to keep the template from being non-functional when the data used is different.|uncertain|uncertain|uncertain|uncertain||directive
+Although major part of the required security is located on the e-commerce and payment platforms, there are some risks server side that must be top priority when it comes to online shopping.|development process|QA|risk|risk||
+For example some data needs a careful treatment, like user related data such as addresses, passwords and payment information.|development process|QA|risk|risk||
+Particular attention must be paid with the checkout process in order to avoid fraud.|development process|QA|risk|risk||directive
+When online payment is involved in an application, payment data needs to be processed and stored somewhere.|system|data|d-architecture|d-architecture||
+The system to process and store this data needs to be PCI DSS8 compliant.|requirement|non-functional|non-functional|non-functional||directive
+Being a sample web-shop it is most appropriate in this case to leave this role to the payment platform, thus sending any payment data to the template’s web server must be strictly avoided.|system|behaviour|b-implementation|b-general|rationale|directive
+The template should be intuitive and use latest design tendencies, especially those allowing a faster navigation experience.|requirement|non-functional|non-functional|non-functional||
+The user should be able to use all functionalities of the web-shop in a smooth way, trying to minimize the number of times the page is fully reloaded.|requirement|non-functional|non-functional|non-functional||
+This will also speed up the communication with the web server, thereby favoring a more efficient interaction with the web-shop.|requirement|non-functional|non-functional|non-functional|rationale|
+The colour scheme should be neutral but pleasant in order to match any web-shop topic, with a winter sports related theme.|requirement|non-functional|non-functional|non-functional|rationale|
+The URL structure of each page needs to be user-friendly, meaning it has to be easily identifiable with the product or category linked when reading it.|requirement|non-functional|non-functional|non-functional||
+At the same time it has to follow some basic SEO rules in order to promote any website based on this template.|uncertain|uncertain|uncertain|uncertain|rationale|directive
+3 Specification|uncertain|uncertain|uncertain|uncertain||
+Agile methodologies suggest to elaborate documentation only as needed, without having any required artifacts for each stage as traditional methodologies usually do.|development process|development practice|development practice|development practice|rationale|
+The reason why heavy documentation is not recommended is because requirements are expected to change constantly during the development process, forcing to update every diagram and text each time a change is applied, with the consequent loss of time that could have been otherwise used to develop the product.|development process|development practice|development practice|development practice|rationale|
+For this reason, only some simplified diagrams were drawn during the specification and design stages, the necessary to understand the system and share ideas with the SPHERE.IO team.|development process|development practice|development practice|development practice|rationale|
+Therefore most of the artifacts presented in both this section and section Design 4, were made after the product was already built, intended to assist the reader in understanding better the system.|document organisation|document organisation|document organisation|document organisation|rationale|
+The specification section here presented describes the necessary system to fulfill the functional requirements previously gathered|document organisation|document organisation|document organisation|document organisation||
+Here are first described the set of use cases that are initially planned for the project, which corresponds to the final Product Backlog (see list in Appendix B Product Backlog).|document organisation|document organisation|document organisation|document organisation||
+The conceptual model of this system is then presented and, for each use case, is explained the expected behavior of the system with the user.|document organisation|document organisation|document organisation|document organisation||
+3.1 Use Case Model|uncertain|uncertain|uncertain|uncertain||
+There are three actors that interact with the system: the customer, the payment platform and the SPHERE.IO e-commerce platform (Figure 3.1).|system|structure|s-architecture|s-architecture||
+The customer can either be an anonymous customer or an identified customer previously existing in the SPHERE.IO platform.|uncertain|uncertain|uncertain|uncertain||
+Since the required functionalities of the present project were mainly designed to test the SPHERE.IO platform, it is no surprise that the platform is present in every single use case of the system whatsoever, so for the sake of readability it will be omitted from the use case diagrams henceforth.|non-information|non-information|non-information|non-information|rationale|
+As mentioned earlier, the system has three functionalities where all use cases fall into: display products, purchase products and manage customer account (Figure 3.2).|requirement|feature|feature|feature||
+The customer is present in all use cases of the system, while the payment platform is only involved in the functionality for purchasing products.|non-information|non-information|non-information|non-information||
+The use cases for displaying products are shown below in Figure 3.3.|document organisation|document organisation|document organisation|document organisation||
+The customer can either list a set of products or display a particular product.|requirement|feature|feature|feature||
+Further additional functionalities can be applied to the product listing, individually or combined together, in order to alter the list itself (i.e. filtering) or the way the products are listed (i.e. sorting and pagination).|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+Figure 3.4 shows the use cases related to purchasing products.|document organisation|document organisation|document organisation|document organisation||
+They can be clearly divided into two different topics: on the one hand all those use cases for managing the shopping cart (i.e. adding, updating and removing items), on the other hand those related to placing and listing orders.|uncertain|uncertain|uncertain|uncertain||
+When placing an order the customer may be requested to pay online, in which case the payment platform will provide the necessary means.|requirement|use case|use case|use case||
+Anonymous as much as registered customers can place orders, but only customers that have been identified are able to list their own orders, otherwise they are requested to identify themselves.|requirement|use case|use case|use case||
+Finally, for the use cases related to account management (Figure 3.5), a registered customer can manage his address book (i.e. add, update or remove postal addresses) or update his account (i.e. change his personal data or password).|requirement|use case|use case|use case||
+He can as well decide to log out from the system and become an anonymous customer.|requirement|use case|use case|use case||
+As an anonymous customer, he can sign up a new account or log in with an existing one.|requirement|use case|use case|use case||
+In case he cannot remember his credentials, he will be given the option to recover his password.|requirement|use case|use case|use case||
+The previously explained use cases are mostly useful to define the scope of the project and understand its functionalities.|non-information|non-information|non-information|non-information||
+For example, these use cases can be helpful to estimate tasks and elaborate the development plan, as well as a guide to determine the necessary functional tests for the system.|non-information|non-information|non-information|non-information||
+But these use cases are too granular for other purposes, such as defining acceptance tests or describing the sequence of user interactions with the system.|non-information|non-information|non-information|non-information||
+These tasks require a more abstract level of use cases, focused on user goals instead of functionalities, sometimes called top-level use cases.|non-information|non-information|non-information|non-information||
+A top-level use case describes a single elementary business process that allows a particular user to fulfill a goal.|non-information|non-information|non-information|non-information||
+In this system there are mainly three goals that a customer may want to achieve when he uses the web-shop, as shown in Figure 3.6|requirement|r-general|r-general|r-general||
+The first one consist of browsing the catalog and selecting those products of interest.|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+At some moment, the user can decide to review the selected items and eventually buy them, which is the second goal.|requirement|use case|use case|use case||
+Finally, the third goal involves checking the payment or shipping status of the order, or any additional related information.|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+All low-level use cases defined earlier are actually providing the functionalities to fulfill these three goals.|non-information|non-information|non-information|non-information||
+Both low-level and top-level use cases are being used indistinctly throughout this document to elaborate other diagrams and descriptions, its use responding mostly to the level of abstraction that fits best the explanation.|non-information|non-information|non-information|non-information||
+In any case, the term “top-level” is expressly used when referring to this type of use case.|non-information|non-information|non-information|non-information||
+3.2 System behavior model|non-information|non-information|non-information|non-information||
+Almost all the low-level use cases of this project consist of only one interaction between the user and the system.|non-information|non-information|non-information|non-information||
+This may be useful for projects that require very detailed information about the system to be developed, possibly because its behavior is very specific and unique.|non-information|non-information|non-information|non-information||
+But this is not the case of this project whatsoever, the use cases defined here are precisely very common amongst web-shops, so any operation offered by this system is considered to be selfexplanatory.|non-information|non-information|non-information|non-information||
+As mentioned before, the top-level use cases are here more appropriate to describe the user communication with the system.|non-information|non-information|non-information|non-information||
+This is because they provide information not only about the system behavior, but also about the sequence of interactions that the customer usually performs in order to achieve a goal.|non-information|non-information|non-information|non-information|rationale|
+Figure 3.7 displays the sequence diagram for the browse catalog top-level use case, one of the many possible success scenarios.|document organisation|document organisation|document organisation|document organisation||
+In this case the user will usually go to the home page, select a category and then filter or sort the products until he eventually finds one of interest.|requirement|use case|use case|use case||
+Then he will probably ask for the details of the product and next he will add it to the shopping cart.|requirement|use case|use case|use case||
+The checkout top-level use case is shown in Figure 3.8.|document organisation|document organisation|document organisation|document organisation||
+Once the customer has some line items in his shopping cart, the next step is to navigate to the cart page|requirement|use case|use case|use case||
+Here the user can remove or modify his line items until he is ready to start the checkout process.|requirement|use case|use case|use case||
+There, after entering all shipping and billing information, the customer will confirm the purchase and the system will request the payment platform to process the payment, displaying the order details in response to the customer.|requirement|use case|use case|use case||
+The last sequence diagram displays the interactions that the customer has to perform in order to check the state of an order (Figure 3.9).|document organisation|document organisation|document organisation|document organisation||
+This scenario requires the customer to previously sign up to the system and purchase some items as a registered customer.|requirement|use case|use case|use case||
+Then at any moment the user can go to the login page and enter the login information to access his customer profile.|requirement|use case|use case|use case||
+There he can select to list all his orders and select the one he wants to view in detail.|requirement|use case|use case|use case||
+3.3 Conceptual Model|non-information|non-information|non-information|non-information||
+The conceptual model of this project revolves around the cart concept, while all other system elements are there to provide the required information to the cart, as seen in the class diagram below (Figure 3.10).|document organisation|document organisation|document organisation|document organisation||
+Products are related to carts as a list of product variants, forming line items.|uncertain|uncertain|uncertain|uncertain||
+Variant is a concept to define the part of the product that contains the particular characteristics of it, such as color or size, even having sometimes a different price.|non-information|non-information|non-information|non-information||
+Therefore every product has at least one variant, each one with different price or attributes.|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour|rationale|
+Similarly, a cart can be associated with one of the shipping methods available in the system, resulting in a shipping item, necessary to manage taxes|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+Both products and shipping methods have a particular tax category, that can be variable for products and fixed in the case of shipping.|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+When one of these elements are added to the cart, a tax rate is assigned to the item according to this tax category and the shipping address of the cart.|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+As mentioned above carts can have a shipping address, but can have as well a billing address.|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+A cart can belong to a registered customer, otherwise it is considered to have an anonymous customer.|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+Once the checkout is finished a cart becomes an order, with information about the current payment, shipping and order status.|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+If the customer was not anonymous, this order will be associated with that customer, along with any of his previous orders.|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+Every customer can also have a list of addresses comprising the address book.|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+Products, addresses and shipping methods can change or disappear over time, but the orders associated with them must stay in the system for an indefinite period of time, having exactly the original information|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+To solve this issue, cart is not related to the original instances, but to instances that were created exclusively for this particular cart as a snapshot of those original instances.|uncertain|uncertain|uncertain|uncertain||
+While the current cart may optionally have associated information, this information is mandatory in an order instance.|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+For simplicity, the conceptual model only accepts product and shipping prices that do not include taxes.|uncertain|||||
+Allowing taxes in prices can be achieved by simply adding a boolean attribute indicating whether the price in question has taxes included or not.|uncertain|||||
+So assuming that taxes are not included, the net total price in the cart must be the sum of all the line item prices (i.e. the quantity in each line item multiplied by the corresponding variant price) associated with it, plus the price of the shipping method selected.|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+In order to calculate the gross total price, taxes must be added up to this resulting net price.|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+Taxes are calculated multiplying the price of each shipping or line item by its corresponding tax rate.|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+Lastly when the shipping address is set in the cart, all tax rates from shipping and line items are calculated.|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+Only those products that include a tax category corresponding to the zone (e.g. state, country) of the shipping address can be part of the cart.|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+Missing the tax category means that the price cannot be calculated, thus the product is not available in that zone.|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+3.4 State Diagrams|uncertain|uncertain|uncertain|uncertain||
+There are two interesting state diagrams of this system, both related to the cart element.|uncertain|uncertain|uncertain|uncertain||
+The first diagram (Figure 3.11) describes how a cart instance changes until it becomes a complete order.|document organisation|document organisation|document organisation|document organisation||
+As the diagram below shows, the current cart is the initial state, which allows to change its contents in multiple ways, such as adding or removing line items or selecting a shipping address.|uncertain|uncertain|uncertain|uncertain||
+Once the checkout is finished the cart becomes an order, being this an irreversible change.|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+From now on the order can only change from an open to a complete state, and vice versa.|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+The second diagram (Figure 3.12) describes the whole process of managing the shopping cart and eventually purchasing these products in the checkout process.|document organisation|document organisation|document organisation|document organisation||
+This diagram will become especially useful when designing the checkout interface, as it clearly displays the requirements of each step of the checkout process|document organisation|document organisation|document organisation|document organisation|rationale|
+At the beginning of the process a new cart is created|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+Once the cart contains an item it can be further updated, then at any moment the user can start or exit the checkout process.|requirement|use case|use case|use case||
+Initially the checkout process requires a shipping address to display the shipping methods, then it requires a shipping method to display billing options.|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+Of course this sequence can be skipped if the cart has already these requirements.|uncertain|uncertain|uncertain|uncertain||
+When the user provides the billing information and finalizes the checkout, the system charges the customer|requirement|use case|use case|use case||
+The order is then created after the payment platform confirms that the payment was successful.|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+The moment the previous cart becomes an order, a new cart is created for the customer in order to start the process once again.|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+4 Design|uncertain|uncertain|uncertain|uncertain||
+The software design describes the final details of a system before it is implemented|non-information|non-information|non-information|non-information||
+During the design process decisions are taken in order to meet the gathered requirements, decisions that are then applied to the system defined in the section Specification 3.|non-information|non-information|non-information|non-information||
+Both physical and logical designs of the system are described in detail in the current chapter (sections System Physical Architecture 4.1 and System Logical Architecture 4.2), with an overview of how the resulting product needs to be implemented.|document organisation|document organisation|document organisation|document organisation||
+Every technology used is carefully justified and the major characteristics are explained (section Description of Used Technologies 4.2.1).|document organisation|document organisation|document organisation|document organisation||
+The selection of a technology is a decisive process aimed to obtain the optimal results of a project|non-information|non-information|non-information|non-information||
+An unwise decision can sometimes seriously affect the total resources needed or the successful fulfillment of the proposed objectives.|non-information|non-information|non-information|non-information||
+It is also important to design correctly the structure of the system, for example identifying and applying the software patterns that can solve existing problems in this particular project.|development process|development practice|development practice|development practice||
+4.1 System Physical Architecure|uncertain|uncertain|uncertain|uncertain||
+The designed system follows a client-server architecture with three tiers: the client, the web application server and the data server tier.|system|structure|s-architecture|s-architecture||
+The data tier corresponds to the SPHERE.IO backend, which offers a scalable cloud-based platform for the e-commerce data, having the capability of scaling up as the demand increases|system|structure|s-implementation|s-techsolution||
+The application tier needs an enterprise hosting solution, suitable for a company web-shop.|system|structure|s-implementation|s-techsolution||
+In order to take advantage of the scalability of the data tier, a good matching web hosting solution would be a cloud service with easy and fast scalability, letting the shop grow as the number of customers grow, without any bottleneck|system|structure|s-implementation|s-techsolution|rationale|
+At the time the system was designed there were only two cloud platforms with built in support for deploying Play applications: Heroku and Cloudbees; although at the end of 2013 the number of services has been doubled and the offer will probably continue to increase in the future.|system|structure|s-implementation|s-techsolution||
+Both services enable a simple automated deployment of the web application to the platform, which will allow developers to have a working hosted application within minutes.|system|structure|s-implementation|s-techsolution|rationale - benefit|
+The specific hosting solution used for this project is irrelevant in terms of requirements, given that it is only intended to host the test web-shop for SPHERE.IO, and both platforms promise the same level of quality.|system|structure|s-implementation|s-techsolution|rationale|
+In spite of that, it is wise to choose the most likely option the future developers will use, so that it is tested beforehand.|uncertain|uncertain|uncertain|uncertain||
+While Cloudbees also offers integrated tools to support development of Java projects, Heroku is a much popular alternative with support for several programming languages and a wide range of plugins, thus becoming a preferable option for the project.|system|structure|s-implementation|s-techsolution|rationale - benefit|
+Unlike SPHERE.IO, Heroku is scalable only under demand.|system|structure|s-implementation|s-techsolution||
+Figure 4.1 illustrates the physical architecture of the system.|document organisation|document organisation|document organisation|document organisation||
+As appears in the diagram, any request to a Heroku deployed web application is first processed by one of the many platform’s reverse proxies.|system|structure|s-implementation|s-techsolution||
+The reverse proxy forwards the request to a HTTP cache layer, which returns the page if it is cached, otherwise forwards the request to the corresponding web application [Rob11].|system|behaviour|b-implementation|b-techsolution||
+The communication between the web application and the SPHERE.IO backend is always held with HTTPS as a requirement of the e-commerce platform.|system|behaviour|b-implementation|b-techsolution||directive
+Instead, the protocol of the requests between the client and the web server are decision of the developer.|system|behaviour|b-implementation|b-general||
+For this project the most reasonable option would be to use HTTPS whenever customer data is being transferred.|system|behaviour|b-implementation|b-techsolution|rationale|
+This is typically the case of the checkout process, as well as any time the customer is logged in.|uncertain|uncertain|uncertain|uncertain||
+4.2 System Logical Architecture|uncertain|uncertain|uncertain|uncertain||
+The logical architecture of the system is designed after the MVC (Model-View-Controller) architectural pattern, which is widely used in web applications design|system|structure|s-architecture|s-architecture||
+Its use in this project is required, since MVC is the architecture pattern followed by Play Framework, the web framework on which SPHERE.IO Play SDK has been developed.|system|structure|s-architecture|s-architecture|rationale|directive
+As the name suggests, the system logic is divided into three components: Model, View and Controller.|system|structure|s-architecture|s-architecture||
+As a rough definition, the Model manages business logic and domain data, the View is responsible of displaying the information, and the Controller is in charge of changing Model and View accordingly to the user input.|system|structure|s-architecture|s-architecture||
+The specific MVC design of the current system is shown in Figure 4.2 below|system|structure|s-architecture|s-architecture||
+One of the particularities of this design is that SPHERE.IO Play SDK is the main component of the Model, since it controls all the domain data of the application, as well as most of the business logic.|system|structure|s-architecture|s-architecture||
+Only some business rules are added to the Model in order to validate form input coming from the user, before sending this data to SPHERE.IO Play SDK, as well as some external functionalities such as email sending and online payment.|system|behaviour|b-implementation|b-techsolution|rationale|
+When the request reaches the web application server, a routing system analyzes the HTTP request and invokes a particular action of the corresponding controller|system|behaviour|b-implementation|b-techsolution||
+Then the controller interprets all required input parameters coming from the user and requests the appropriate changes to the model.|system|behaviour|b-implementation|b-general||
+In the model, SPHERE.IO Play SDK executes the request, which usually involves communication with the SPHERE.IO backend in order to create, read, update or delete (CRUD) some of the stored data.|system|behaviour|b-implementation|b-techsolution||
+Once the model finishes processing the request, the controller selects the appropriate template and sends all information related to the current request to the view.|system|behaviour|b-implementation|b-general||
+With this information and some other obtained directly from the model, the view generates a HTML document that is sent back to the client via a HTTP response.|system|behaviour|b-implementation|b-techsolution||
+With this design, a new whole web page must be loaded from the server every time the user wants to interact with the system.|system|ui design|u-implementation|u-implementation||
+This is known as a “thin client” design, because all the logic is located in the server, leaving the client with the only task of rendering the web page.|system|structure|s-architecture|s-architecture||
+In comparison with that, a “fat client” hosts all the logic of the system; hence Controller, View and Model are located on the client side, leaving in the server just those parts of the Model responsible for the security and management of persistence.|system|structure|s-architecture|s-architecture||
+A fat client allows the user to interact with the system while never reloading the web page, only updating those specific components of the page that changed during the interaction.|system|structure|s-architecture|s-architecture||
+This behavior enhances the user experience, because the user can continue interacting with the system while operations are taking place.|requirement|non-functional|non-functional|non-functional|rationale - benefit|
+Information can also be presented in an incremental way, so that the user can start interacting with some elements of the page while further information is being retrieved|system|ui design|u-architecture|u-architecture|rationale - benefit|
+Another important fact is that traffic between the client and the system is reduced to simple data with no presentation information, which speeds up the communication with the system and decreases network use.|system|behaviour|b-implementation|b-general|rationale - benefit|
+While a fat client solves some external design issues, it also creates several technical problems.|system|structure|s-architecture|s-architecture|rationale - drawback|
+Since the web page is never reloading, the browser can no longer control the routing, caching or history management of it.|uncertain|uncertain|uncertain|uncertain|rationale|
+Therefore it is the responsibility of the system to replace those functionalities that the browser is unable to perform.|uncertain|uncertain|uncertain|uncertain|rationale|
+These technical problems can be considered a too expensive price to pay in order to improve the user experience.|requirement|non-functional|non-functional|non-functional|rationale|
+The amount of resources needed to implement a reliable system with a pure fat client is several times higher than the equivalent with a thin client.|system|structure|s-architecture|s-architecture|rationale - drawback|
+Moreover the complexity of the code is also very significant, which makes this design not suitable for a template that must be understandable and easy to learn.|requirement|non-functional|non-functional|non-functional||
+A mixed approach between a fat and a thin client can be the solution to improve the user experience without giving up on the browser logic|system|structure|s-architecture|s-architecture|rationale - benefit|
+The website can be divided into different contexts that offer the user some common functionalities.|uncertain|uncertain|uncertain|uncertain||
+Between contexts the web page is fully reloaded, while operations within the contexts only update some parts of the page [Con13].|system|ui design|u-implementation|u-implementation||
+By way of example, each product detail page is a different context, but adding a product to the shopping cart only updates the mini-cart displayed, while the user never leaves the page.|system|ui design|u-implementation|u-implementation||
+In order to facilitate understanding of the logical architecture of the system, its design has been divided into two different diagrams: the one corresponding to the scenario between contexts and the one displaying the scenario within a context.|uncertain|uncertain|uncertain|uncertain||
+The former has already been explained before, so the following explanation will focus on the differences and characteristics between both scenarios.|uncertain|uncertain|uncertain|uncertain||
+Every time a new context is loaded or the user interacts with the web page in some way, an event is fired by HTML DOM.|system|ui design|u-implementation|u-implementation||
+The controller on the client side can handle these events, in which case it gathers the required information and requests the client-side model to validate this information in order to avoid unnecessary calls to the server.|system|behaviour|b-implementation|b-general|rationale|
+If the validation was successful, the controller sends the corresponding HTTP request to the server, which is analyzed by the routing system and handed over to a controller action the same way as before.|system|behaviour|b-implementation|b-techsolution||
+As well as before the controller requests the appropriate changes to the model, but this time when the model finishes, the controller generates JSON data using the information related to the current request coming from the model.|system|behaviour|b-implementation|b-techsolution||
+This JSON data is sent back to the controller located on the client, which in turn selects a template and sends this data to the view.|system|behaviour|b-implementation|b-techsolution||
+With that, the view generates a HTML fragment that uses to replace the corresponding component on the web page.|system|behaviour|b-implementation|b-techsolution||
+4.2.1 Description of Used Technologies|uncertain|uncertain|uncertain|uncertain||
+The current project has several technologies that are fixed by the requirements, starting with SPHERE.IO Play SDK.|system|structure|s-implementation|s-techsolution||directive
+This SDK is designed to be used with Play Framework, and specifically with the Java language version.|system|structure|s-implementation|s-techsolution||
+Besides the framework has a significant influence on several other server-side technologies as well, depending on the support it provides.|system|structure|s-implementation|s-techsolution||
+On the other hand, the payment platform needs to be carefully chosen, because it has inevitably a great impact on the template reusability and the analysis of the platform.|uncertain|uncertain|uncertain|uncertain|rationale|
+All client-side technologies need to be selected, specially the templating solution in the view component.|uncertain|uncertain|uncertain|uncertain||directive
+Furthermore, given that maximizing developer experience (i.e. user experience applied to developers) is one of the main requirements of the project, this system needs technologies to help organizing and simplifying the code, particularly complex because of the logical architecture design.|requirement|non-functional|non-functional|non-functional|rationale|
+Figure 4.4 above illustrates the use of technologies in each component.|document organisation|document organisation|document organisation|document organisation||
+As it shows, Play is the web application framework, that uses the programming language Scala in the templates, and Java in both model and controllers.|system|structure|s-implementation|s-techsolution||
+In the model SPHERE.IO provides the main commerce business logic of the system, while Optile supports the payment functionality.|system|structure|s-implementation|s-techsolution||
+Additionally, LESS and CoffeeScript are used server-side to generate CSS and JavaScript files, respectively.|system|structure|s-implementation|s-techsolution||
+The server is using HTML5 and JSON files to send information to the client.|system|structure|s-implementation|s-techsolution||
+The logic of the client side is supported by jQuery and the templating system is implemented with Handlebars.|system|structure|s-implementation|s-techsolution||
+A description of each chosen technology and the characteristics that influenced the decisionmaking are detailed below.|document organisation|document organisation|document organisation|document organisation||
+4.2.1.1 SPHERE.IO|system|structure|s-implementation|s-techsolution||
+SPHERE.IO is a cloud-based commerce platform, aimed to unify e-commerce data in a single place where any kind of external system can access this information.|system|structure|s-implementation|s-techsolution||
+These external systems are typically web-shops but can actually be any type of application, even those not related to ecommerce.|uncertain|uncertain|uncertain|uncertain||
+SPHERE.IO provides a platform to store and process all this data according to commerce business rules, while at the same time offers several ways to access it.|system|structure|s-implementation|s-techsolution||
+The primary entry point to the backend is provided by a RESTful API, that offers an interface for programmatic access to the data and associated functionality.|system|structure|s-architecture|s-architecture||
+The API services are using JSON to communicate, always over HTTPS, with previous authorization using OAuth2.|system|structure|s-implementation|s-techsolution||
+Although it is actually the core of the platform, its direct use might be tedious for slightly complex applications.|uncertain|uncertain|uncertain|uncertain||
+That is the reason why it is recommended to use client libraries and SDKs to communicate with the API, and so improving the development experience.|system|structure|s-implementation|s-techsolution|rationale|
+The SPHERE.IO team chose Java as the first programming language to have a client library due to its versatility.|system|structure|s-implementation|s-techsolution|rationale|
+This library is open source, as it is intended to be improved or used as a reference to build other libraries by the developer community.|system|structure|s-implementation|s-techsolution||
+In order to provide a better environment to build websites, a SDK was built on top of the client library: the SPHERE.IO Play SDK.|system|structure|s-architecture|s-architecture|rationale - benefit|
+It allowed to adapt the Java client library to the processes and structure of the Play Framework.|system|structure|s-architecture|s-architecture|rationale - benefit|
+A command-line interface (CLI) is also available, especially aimed for managing SPHERE.IO user accounts and projects from a command-line shell.|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour|rationale|
+It is also necessary to use the CLI in order to manipulate and query data in batches or for automated jobs, such as importing products into SPHERE.IO.|system|structure|s-implementation|s-techsolution|rationale|directive
+As opposed to the API, the CLI is not using OAuth2 since all operations are done under a user account.|system|structure|s-implementation|s-techsolution|rationale|
+So far all the tools for accessing and managing the backend data were focused on developers, but merchants have also the possibility to view and update the data using a web application called Merchant Center.|system|structure|s-implementation|s-techsolution||
+Besides that, merchants can also export and import data between SPHERE.IO and other external systems using elastic.io11 as an integration platform.|system|structure|s-implementation|s-techsolution||
+4.2.1.2 Optile|system|structure|s-implementation|s-techsolution||
+Optile is a payment platform that allows to access a set of heterogeneous payment methods and providers (e.g. credit cards, direct debit, PayPal) under a common interface.|system|structure|s-implementation|s-techsolution||
+Once the web-shop has the platform integrated, the set of payment options can be extended or reduced without any extra implementation effort.|uncertain|uncertain|uncertain|uncertain||
+Optile has five different main levels of integration: redirected, hosted, half-native and native with and without PCI.|system|structure|s-implementation|s-techsolution||
+These are implemented one on top of the other without losing the previous implementation, that way one can go back to lower levels very easily.|system|structure|s-architecture|s-architecture||
+The first level is the universal redirect, where the customer is completely redirected to the payment platform and there he enters his payment data.|uncertain|uncertain|uncertain|uncertain||
+In the second level that form is hosted in the system via a HTML frame or JavaScript.|system|structure|s-implementation|s-techsolution||
+With the third level the system is in charge of querying the platform about the payment options and display them, but once the user selects one he is redirected to the platform to provide the payment data.|uncertain|uncertain|uncertain|uncertain||
+The fourth level displays both payment options and forms, taking care of submitting the forms to the platform.|uncertain|uncertain|uncertain|uncertain||
+The last level requires the system to be PCI compliant, because it gathers the payment data and queries the platform to charge the customer with the provided data.|requirement|non-functional|non-functional|non-functional||directive
+In opposite to traditional payment platforms, the successful integration of Optile will attest that this web-shop supports a wide range of payment methods and providers, as well as multiple different ways of integration.|system|structure|s-implementation|s-techsolution|rationale - benefit|
+It is also a good choice for developers, who will have a system with several online payment methods already implemented.|uncertain|uncertain|uncertain|uncertain||
+Optile first integration can become a little bit tedious, but its flexibility will be profitable for this project.|system|structure|s-implementation|s-techsolution|rationale - benefit|
+A valid alternative is Paymill, a popular payment solution which characteristics are completely opposed to Optile: the integration is very fast and easy, but the payment providers offered are limited to credit card and direct debit.|system|structure|s-implementation|s-techsolution|rationale|
+Also the customer is never redirected to the payment server, yet there is no need to be PCI compliant.|uncertain|uncertain|uncertain|uncertain||
+The reason is that the payment form is never submitted, but its data is sent to the payment server via a JavaScript library, returning a token in exchange that the system can use to charge the customer from the server side.|system|behaviour|b-implementation|b-tech solution|rationale|
+Nevertheless the selected solution is Optile, because its implementation will benefit more the project than Paymill.|system|structure|s-implementation|s-techsolution|rationale - benefit|
+4.2.1.3 Play  Framework|system|structure|s-implementation|s-techsolution||
+The use of Play Framework comes as a requirement to test the suitability of SPHERE.IO Play SDK, which was build to create web-shops using this specific framework.|system|structure|s-implementation|s-techsolution||directive
+Play is an open source web application framework that was first released in 2007 and written in Java.|system|structure|s-implementation|s-techsolution||
+In 2012 a second release was announced, with a core completely rewritten in Scala.|system|structure|s-implementation|s-techsolution||
+This is precisely the version that SPHERE.IO Play SDK works with.|system|structure|s-implementation|s-techsolution||
+This second version of Play uses Scala in its web template system.|system|structure|s-implementation|s-techsolution||
+Projects in Play are built and deployed with SBT, a build tool for Scala and Java projects, allowing developers to choose between these two programming languages in order to implement the logic of their web applications.|system|structure|s-implementation|s-techsolution||
+Despite this, currently SPHERE.IO Play SDK is supported only in Java projects.|system|structure|s-implementation|s-techsolution||
+Play follows the MVC logical architectural pattern and is completely RESTful, which means amongst other things that is stateless, unlike other Java frameworks.|system|structure|s-architecture|s-architecture||
+It was also designed to support full asynchronous HTTP programming, to serve long-lived requests without tying up other threads.|system|behaviour|b-implementation|b-techsolution|rationale|
+Play also includes the Jackson library to manipulate JSON data and native support for the software testing frameworks JUnit and Selenium.|system|structure|s-implementation|s-techsolution||
+Moreover it also has a compiler for CoffeeScript and LESS, two programming languages that compile into JavaScript and CSS respectively.|system|structure|s-implementation|s-techsolution||
+4.2.1.4 CoffeeScript|system|structure|s-implementation|s-techsolution||
+CoffeeScript is a programming language that compiles into JavaScript, adding syntactic sugar to greatly improve the developer experience.|system|structure|s-implementation|s-techsolution|rationale - benefit|
+The new syntax provides a better readability of the code and helps developers to write complex scripts much more easily.|requirement|non-functional|non-functional|non-functional||
+The increased readability of the code goes along with a decreased number of lines compared to the same code in JavaScript, around one third fewer lines.|requirement|non-functional|non-functional|non-functional||
+Another interesting feature is an additional syntax to use JavaScript’s native prototyping as a class-based system, making object-oriented programming with JavaScript less complex, particularly when it comes to inheritance.|system|structure|s-implementation|s-techsolution|rationale - benefit|
+Improving developer experience is a priority in this project, so CoffeeScript will contribute to make client-side code easier to understand and modify.|requirement|non-functional|non-functional|non-functional||
+It will also be considerably helpful with the development of the JavaScript code, which is pretty complex due to the logical design of the system.|uncertain|uncertain|uncertain|uncertain||
+Therefore its use is very appropriate, especially since a CoffeeScript compiler comes included in Play Framework.|system|structure|s-implementation|s-techsolution|rationale|
+4.2.1.5 LESS CSS|system|structure|s-implementation|s-techsolution||
+Similarly to CoffeeScript, LESS is a language that compiles into CSS.|system|structure|s-implementation|s-techsolution||
+But unlike CoffeeScript, LESS does not modify the syntax of CSS, but only extends it with dynamic behavior, such as variables, operations and functions.|system|structure|s-implementation|s-techsolution||
+This makes LESS very easy to learn and converts a simple CSS-based file into a powerful dynamic stylesheet.|system|structure|s-implementation|s-techsolution|rationale - benefit|
+LESS will allow to better organize the stylesheet of the web-shop, thus facilitating a swift development, fast edition and easy understanding of its code.|system|structure|s-implementation|s-techsolution|rationale - benefit|
+Although there are other CSS preprocessors like the popular Sass, the provided functionalities are quite similar and Play Framework already comes with a native support of the LESS compiler.|system|structure|s-implementation|s-techsolution|rationale - benefit|
+4.2.1.6 jQuery|system|structure|s-implementation|s-techsolution||
+jQuery is a very powerful and fast JavaScript library that allows to easily do DOM scripting (i.e. HTML elements manipulation and event handling), perform animations and simplify the use of AJAX programming; altogether very necessary in this project.|system|structure|s-implementation|s-techsolution|rationale - benefit|
+The main alternatives, such as MooTools or YUI Library, are also very satisfactory solutions in the mentioned areas, with no significant differences.|system|structure|s-implementation|s-techsolution||
+The final choice of jQuery has been mainly determined by the fact that it has the largest community amongst the options.|system|structure|s-implementation|s-techsolution|rationale|
+4.2.1.7 Handlebars.js|system|structure|s-implementation|s-techsolution||
+Handlebars is the web template system used in this project to manage client-side templates.|system|structure|s-implementation|s-techsolution||
+It is a JavaScript implementation of the platform-independent Mustache project, that allows to render input data in a template using a very clean syntax.|system|structure|s-implementation|s-techsolution|rationale - benefit|
+Mustache has a so-called logic-less template syntax because there are no explicit control flow statements, all needed logic comes exclusively from the data in the form of booleans, arrays or lambdas.|system|structure|s-implementation|s-techsolution||
+On the contrary Handlebars templates are compiled, allowing to define helpers to reuse code for presentation.|system|structure|s-implementation|s-techsolution|rationale - benefit|
+It also comes with built-in helpers to control the default flow of the template, such as loops or conditional statements.|system|structure|s-implementation|s-techsolution|rationale - benefit|
+Handlebars comes also with better support for paths to access the data.|system|structure|s-implementation|s-techsolution|rationale - benefit|
+In short, this solution makes easier to implement templates than Mustache while still keeping logic separated from presentation.|system|structure|s-implementation|s-techsolution|rationale - benefit|
+There is another project, Dust.js, with the same strong points as Handlebars and with useful additional features like template composition|system|structure|s-implementation|s-techsolution|rationale - benefit|
+During the last year LinkedIn has been contributing actively to a separated Dust.js project that the company is using for its website [Bas12].|non-information|non-information|non-information|non-information||
+Regardless it has been considered that Handlebars is a safer option, since the additional features are not indispensable for this project.|system|structure|s-implementation|s-techsolution|rationale|
+4.2.2 External Design|uncertain|uncertain|uncertain|uncertain||
+The external design of a system requires the developer team to work closely with a designer team.|development process|development practice|development practice|development practice||directive
+While the designers are in charge of creating the interface and aesthetic design, the other external design areas of the system need a more technical approach.|development process|development practice|development practice|development practice||directive
+These areas consist of the navigation and architecture design, as well as some parts of the content design.|system|ui design|u-architecture|u-architecture||
+All these aspects are covered by the User Experience (UX) Model explained here.|uncertain|uncertain|uncertain|uncertain||
+It describes, in particular, how the dynamic content will be structured and organized in different screens, and how the user will navigate amongst those screens to reach a particular goal.|system|ui design|u-architecture|u-architecture||
+For this project, the designer team together with the developer team decided to implement a layout structure and behavior inspired on different web-shops with innovative design, always focusing on offering the user a smooth interaction with the system|system|ui design|u-architecture|u-architecture||
+Each screen is going to be presented and described with wireframe prototypes, and then the storyboard sequence and navigational paths will illustrate the connections between those screens.|system|ui design|u-architecture|u-architecture||
+4.2.2.1 Display products|requirement|feature|feature|feature||
+Product listing is the first functionality that a customer uses when arriving at the web-shop and the one he will be using for longer periods of time, so it needs to have a comfortable way to display and paginate the products|system|ui design|u-architecture|u-architecture|rationale|directive
+At best, traditional web-shops usually have very rigid ways of listing products: pagination consists of an interface that allows to select the page and the amount of products per page, while display options let the user select between a list or a grid type of view|system|ui design|u-architecture|u-architecture||
+So instead of showing a traditional shop catalog, it was considered a better option to let the products flow freely through the web page, using all the width and height possible to show at once the maximum amount of products to the user (Figure 4.12)|system|ui design|u-architecture|u-architecture|rationale|
+On the other hand, the pagination needs to be natural without losing already viewed products, so when the user reaches the bottom of the page new products should appear automatically under the previous ones.|system|ui design|u-architecture|u-architecture|rationale|directive
+The product thumbnails, besides price and name, will be showing a picture of the product and the different color variants.|system|ui design|u-architecture|u-architecture||
+The selected variant will be highlighted, and when hovering a different color the thumbnail will be updated with that variant information, such as picture and price, if different.|system|ui design|u-architecture|u-architecture||
+The thumbnail will also include a button to add the selected product variant to the shopping cart.|system|ui design|u-architecture|u-architecture||
+In case the product has different sizes available, when hovering the button a list of the different sizes will be shown, so that the user can select the desired size he wants to add to the cart.|system|ui design|u-architecture|u-architecture|rationale|
+When clicking on a product thumbnail the user will be redirected to the product detail of the variant he had selected (Figure 4.13), if any.|requirement|use case|use case|use case||
+There he can select any other color variant, in which case a new page will be loaded in order to update the URL, to let the user share the product URL that points to this particular color.|requirement|use case|use case|use case||
+He can also select a different size, but in this case the page is not reloading, as it was considered that the user does not have a need to share the exact size.|requirement|use case|use case|use case|rationale|
+Below one can add the selected product variant to the cart, optionally indicating the exact quantity.|system|ui design|u-architecture|u-architecture||
+The header contains a mini-cart and the login panel throughout the website.|system|ui design|u-architecture|u-architecture||
+In any product list or product detail page, the header also contains the categories and subcategories of the shop to let the user filter products by category.|system|ui design|u-architecture|u-architecture|rationale|
+The rest of the pages should contain a button to allow the user go back to the last category or product he visited.|system|ui design|u-architecture|u-architecture|rationale|
+When scrolling, the header is always kept at the top of the page.|system|ui design|u-architecture|u-architecture||
+Below the header, a breadcrumb is showing the current category path|system|ui design|u-architecture|u-architecture||
+Whenever a product is added to the cart, the mini-cart located on the header appears for a few seconds, to let the customer know that the product was added successfully.|system|ui design|u-architecture|u-architecture|rationale|
+At any time the user can see again the contents of his shopping cart when hovering the cart button on the header, that will be closed automatically when moving the cursor away from the mini-cart.|requirement|use case|use case|use case||
+Below, Figure 4.14 and Figure 4.15 presents the storyboard sequence and the navigational paths, respectively, of the screens just described.|document organisation|document organisation|document organisation|document organisation||
+In the storyboard sequence it is shown how the same interactions defined in the sequence diagrams of the specification are performed through the different screens.|system|ui design|u-architecture|u-architecture||
+This connections are also captured in the following navigational paths diagram.|uncertain|uncertain|uncertain|uncertain||
+The resulting screens and navigational path diagram, besides the connections between screens, shows the detailed content of each screen.|system|ui design|u-architecture|u-architecture||
+The screen for listing products displays the selected filtering options and contains a single form to change them.|system|ui design|u-architecture|u-architecture||
+It also has the name of the current category and the list of matching products, with their different variants for color and size.|system|ui design|u-architecture|u-architecture||
+This screen has an option to add a product to the cart, while the product detail page has a form to let the user specify the quantity of items he wants to add.|system|ui design|u-architecture|u-architecture||
+Both screens renders the category tree so that the customer can list all products from a particular category at any moment.|system|ui design|u-architecture|u-architecture|rationale|
+4.2.2.2 Purchase Products|requirement|feature|feature|feature||
+In order to start the checkout process, the user will first access the cart detail page by clicking on the cart button.|requirement|use case|use case|use case||
+This page shows the items and their details, along with the possibility to remove them or change the number of units of each item (Figure 4.16).|system|ui design|u-architecture|u-architecture||
+Both actions are performed without reloading the page, just updating the contents of the shopping cart and the pricing details accordingly.|system|ui design|u-implementation|u-implementation||
+The checkout page can be accessed from both mini-cart and cart detail page.|system|ui design|u-architecture|u-architecture||
+The checkout page is probably one of the least frequented pages of a web-shop, but it is for sure the most important when it comes to user experience.|system|ui design|u-architecture|u-architecture||
+The customer needs to feel he has control of the flow and that he is able to quit at any time.|uncertain|uncertain|uncertain|uncertain||
+The checkout needs to be a secure and robust environment to the user.|requirement|non-functional|non-functional|non-functional||
+Traditional web-shops usually reload when moving from one checkout step to the other, and it can be sometimes difficult to change the data of a step that is not immediately before the active one.|development process|QA|issue|issue||
+In some cases it is also hard to know what changes are modifying the price or to review what was entered on previous steps.|development process|QA|issue|issue||
+All these issues are affecting negatively the feeling of control the user has.|development process|QA|issue|issue|rationale - drawback|
+For this design it was considered a good idea to display all the steps throughout the page as sections that can be expanded, so that the user modifies them (see Figure 4.17).|system|ui design|u-architecture|u-architecture|rationale|
+Once edited, the section closes again and displays a summary with the selected options.|system|ui design|u-architecture|u-architecture||
+Every change automatically updates the pricing details that are always shown at the bottom of the page.|system|ui design|u-architecture|u-architecture||
+As a way of guiding the customer through the checkout process, the user can only open new sections sequentially.|system|ui design|u-architecture|u-architecture||
+Also when a form is still not available due to missing requirements (e.g. shipping method cannot be displayed until shipping address is set) a message will be shown instead until the requirements are met.|system|ui design|u-architecture|u-architecture||
+The checkout is divided into three steps: first a cart summary, to verify the items are correct; second the shipping information, to determine where and how the goods are being delivered; and third the billing information, to select the way the products are being paid.|uncertain|uncertain|uncertain|uncertain||
+Both shipping and billing sections have on the left side a form to set the postal address and on the right side the shipping and payment options, respectively.|system|ui design|u-architecture|u-architecture||
+When the customer is logged in, his address book will appear on the right side, allowing him to select one of his addresses, which data will then be copied to the corresponding address form.|requirement|use case|use case|use case||
+The storyboard sequence from Figure 4.18 is showing how this checkout process is distributed with the presented screens.|system|ui design|u-architecture|u-architecture||
+Below in Figure 4.19, the screens and navigational paths diagram expose that all screens have almost the same data, such as a set of line items and some pricing details, while the checkout page and the order summary have also a billing and shipping address, all them with different multiplicities.|system|ui design|u-architecture|u-architecture||
+The cart has forms to update line items, as many as line items are in the cart.|system|ui design|u-architecture|u-architecture||
+The checkout is also composed of different forms, one for each element that the customer must fill, to allow saving each element individually.|system|ui design|u-architecture|u-architecture|rationale|
+4.2.2.3 User  management|requirement|feature|feature|feature||
+Before attempting to access his profile page, the user needs to identify himself to the system.|requirement|use case|use case|use case||
+This is done in the login screen, a page that also contains a form to register into the system (see Figure 4.20).|system|ui design|u-architecture|u-architecture||
+In case the user forgot his password, the login form contains an option to recover it, which renders a modal window where an email address is requested when the option is clicked.|requirement|use case|use case|use case||
+Submitting this form will send an email to the user with a new URL, that redirects to the same login page but with a different modal window to enter a new password.|requirement|use case|use case|use case||
+Once the password is submitted the modal window closes, thus showing the login form again to allow the user enter his new credentials.|requirement|use case|use case|use case||
+The user profile is a single page with sections to change user data, password, manage the address book and view the list of orders (see Figure 4.21).|system|ui design|u-architecture|u-architecture||
+The latter consists of some stockable sections, each one containing all information about a particular order, such as the products purchased, the price details and all shipping and billing related information.|system|ui design|u-architecture|u-architecture||
+When clicking on a section, this one expands showing its contents, while all other sections remain closed.|system|ui design|u-architecture|u-architecture||
+The address book is the only section with a slightly complex design.|system|ui design|u-architecture|u-architecture||
+This component has a list of existing addresses on the left and an empty form on the right to add a new address (Figure 4.22).|system|ui design|u-architecture|u-architecture||
+When the user selects an address the form changes into edition mode, highlighting the address and copying its data to the empty form.|requirement|use case|use case|use case||
+A button at the top allows the user to return the form to its initial mode.|requirement|use case|use case|use case|rationale|
+Whenever the user adds, updates or removes an address, the list of addresses is updated accordingly.|requirement|use case|use case|use case||
+Again, the specification sequence diagram is adapted to the given design, illustrating the different screens that participate in every interaction in the check order top-level use case (see Figure 4.23).|system|ui design|u-architecture|u-architecture||
+Figure 4.24 below shows the screens and navigational paths diagram, displaying every screen component that belong to the customer profile screen, each with its own data and forms.|system|ui design|u-architecture|u-architecture||
+4.2.3 Internal Design|uncertain|uncertain|uncertain|uncertain||
+After representing the external design of the system, every diagram of the UX Model needs to be adapted to the chosen technologies.|uncertain|uncertain|uncertain|uncertain||directive
+An internal class and sequence diagram are resulting from this process, showing the communication between each component.|uncertain|uncertain|uncertain|uncertain||
+These diagrams are done with the Web Application Extension (WAE) to UML, which allows to represent every significant element of the web presentation layer with the UML modeling language.|uncertain|uncertain|uncertain|uncertain|rationale|
+In this project, the new class stereotypes of WAE enabled to represent server-side pages, client-side pages, forms and script libraries; every class with its own attributes and methods.|system|structure|s-architecture|s-architecture||
+There are also new association stereotypes to represent the different ways of communication between elements.|uncertain|uncertain|uncertain|uncertain||
+These can be, amongst others, a common link with parameters (link), a form data submission (submit), a forwarding of the request to another element (forward), a generation of HTML output (build) or an import of a JavaScript file (script).|system|behaviour|b-implementation|b-techsolution||
+Internal design diagrams can become quite complex when trying to represent all files that participate in a use case, particularly when applying some design patterns.|uncertain|uncertain|uncertain|uncertain||
+For this reason, in this section only those diagrams that illustrate some special behavior or structure are displayed, simplifying any characteristic that is later described in the following sections, such as design patterns that apply to all use cases.|document organisation|document organisation|document organisation|document organisation|rationale|
+The internal class diagram in Figure 4.25 represents the whole browse catalog top-level use case.|document organisation|document organisation|document organisation|document organisation||
+It is worth noticing that usually a client page links first to a server page, which then forwards to a server page with a “scala” extension.|system|behaviour|b-implementation|b-general||
+The first server page symbolizes a file in the Controller component, while the second corresponds to a Scala template from the View, which builds the client page.|system|structure|s-architecture|s-architecture||
+An exception to this rule appears within contexts, when the client page asynchronously makes a request to the server.|system|behaviour|b-implementation|b-general||
+The response is simple data, so no HTML output is built, and it is the client page itself which updates its content with the information sent via forward parameters.|system|behaviour|b-implementation|b-general||
+The methods that allow to update the information from the client page are always coming from the JavaScript files, but generally are represented as methods from the client page.|system|structure|s-implementation|s-sourcecode||
+Only exception appears when the same method is shared between two pages, in which case it is left in the script for simplicity [Oli10].|system|structure|s-implementation|s-sourcecode|rationale|
+So an example of this particular behavior can be observed when adding a product to the cart from a product page or a product list page.|uncertain|uncertain|uncertain|uncertain||
+The server page that updates the cart sends to the mini cart component all the information related to the shopping cart contents.|system|behaviour|b-implementation|b-general||
+With this data the JavaScript in charge of the cart updates only the mini cart component with the new information.|uncertain|uncertain|uncertain|uncertain||
+Another example is the functionality to load more products when scrolling to the bottom of the page|system|ui design|u-implementation|u-implementation||
+In this case also the corresponding sequence diagram is presented (Figure 4.26) to observe in detail how the components are behaving.|document organisation|document organisation|document organisation|document organisation||
+First, the customer navigates to the SelectCategory server page, which requests to SPHERE.IO the list of products for a particular category.|system|behaviour|b-implementation|b-techsolution||
+This server page forwards all necessary information to the corresponding view, which creates the entire client page and sends it back to the customer.|system|behaviour|b-implementation|b-general||
+Then when the customer scrolls to the bottom of the page, the load more products method is called from the client page, which starts an asynchronous request to the server while the control is given back to the customer.|uncertain|uncertain|uncertain|uncertain||
+In this request the script itself communicates with the server page ListProducts, which again makes a request to the model, this time asking for the next page.|system|behaviour|b-implementation|b-general||
+The resulting data is sent to the client page, that renders and appends a new Product List component with the received products.|system|behaviour|b-implementation|b-general||
+Figure 4.27 below is the internal design class diagram for updating and removing line items from the cart.|document organisation|document organisation|document organisation|document organisation||
+The update functionality requires a form where the customer specifies the new quantity, while removing is just a direct link.|uncertain|uncertain|uncertain|uncertain||
+Both actions end up in the server page for updating the cart, which forwards the new cart information to the cart page.|system|behaviour|b-implementation|b-general||
+Figure 4.28 below presents the internal sequence diagram corresponding to the update item in cart use case, although the diagram corresponding to the deletion is very similar.|document organisation|document organisation|document organisation|document organisation||
+The initial process to access the client page is the same as any other use case: the customer navigates to the server page, which forwards the information to the template, which builds the client page.|requirement|use case|use case|use case||
+Unlike the use case for removing line items, when updating them the customer is filling a form.|uncertain|uncertain|uncertain|uncertain||
+But the form does not have a submit button, instead it is automatically submitted when the user changes the quantity value.|system|ui design|u-implementation|u-implementation||
+That is the reason why after filling the form the page is calling the update line item method, which asynchronously submits the form to the server page UpdateCart.|uncertain|uncertain|uncertain|uncertain||
+As in any other background form submission in this project, the server page requests to the model the corresponding change and the related information is forwarded to the initial client page.|system|behaviour|b-implementation|b-general||
+From this page is called the update price details method, which in fact builds several page components and replaces with them the corresponding elements displayed in the page.|system|structure|s-implementation|s-sourcecode||
+The next two diagrams illustrate together the place order use case, being Figure 4.29 focused on the checkout page, and Figure 4.30 on the order creation and display of a summary.|document organisation|document organisation|document organisation|document organisation||
+The first diagram has several forms, one for each element to be modified individually: the shipping address, the shipping method, the billing address and finally the payment form.|document organisation|document organisation|document organisation|document organisation||
+The payment form does not appear in the diagram because its submission is not directed to this system, but to the payment platform, as it will be described in the corresponding sequence diagram|document organisation|document organisation|document organisation|document organisation||
+In any case, it would only consist of a submit button and a dynamic payment form loaded with the data coming from Optile.|system|ui design|u-architecture|u-architecture||
+As the actual content is unknown, it was considered best to leave it out from the diagram.|uncertain|uncertain|uncertain|uncertain||
+All other forms from the diagram are submitting in the background as the previous example.|uncertain|uncertain|uncertain|uncertain||
+In every asynchronous call, the updated information regarding the current checkout state is forwarded to the checkout page.|system|behaviour|b-implementation|b-general||
+On the other hand, some of the data needs to be requested explicitly to the server, such as the list of shipping methods or the address book of a registered customer, to avoid performing repeated unnecessary calls to the SPHERE.IO backend.|system|behaviour|b-implementation|b-techsolution|rationale|directive
+The second diagram follows a simple design: the moment the customer is redirected from the payment platform back to the system with a successful payment, the server page creates the order and forwards all its information to the template, which in turn creates a page with a summary of the order to be displayed to the customer.|uncertain|uncertain|uncertain|uncertain||
+In contrast, the internal sequence diagram of the order creation is much more complex than the class diagram (see Figure 4.31).|document organisation|document organisation|document organisation|document organisation||
+Once the checkout form is filled and the customer decides to submit it, the data is sent directly to the payment platform in order to avoid being PCI compliant.|requirement|use case|use case|use case||
+The platform proceeds charging the customer and then redirects him to the system.|requirement|use case|use case|use case||
+There the order is created and the order summary is displayed.|system|ui design|u-architecture|u-architecture||
+The payment platform redirects the customer to a different server page based on whether the charging operation was successful.|requirement|use case|use case|use case||
+The order is therefore only created when the customer is redirected to the successful server page.|requirement|use case|use case|use case||
+But this system would easily lead to fraud, because the user could try to access the page directly without being charged.|development process|QA|risk|risk||
+To solve this issue, the order is created but always with a pending payment status.|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+The only possible way to update the payment status from the web-shop is to access the NotifyPayment server page, which access will be limited to the payment platform (see Figure 4.32).|system|structure|s-architecture|s-architecture||
+Optile requires this notification request to update the payment status of a certain order, something necessary when there is a change in the payment.|system|behaviour|b-implementation|b-techsolution|rationale|directive
+This can easily happen when using PayPal, because the payment needs to be approved first, therefore changing multiple times of status during an undefined period of time.|system|structure|s-implementation|s-techsolution||
+4.2.4 DESIGN OF THE MODEL COMPONENT|uncertain|uncertain|uncertain|uncertain||
+As described at the beginning of the section System Logical Architectural 4.2, the logic of the model component is largely located in the SPHERE.IO Play SDK, which contains all the commerce logic and allows to access all data stored in the e-commerce backend.|system|structure|s-architecture|s-architecture||
+The Sphere class shown in the diagram below (Figure 4.33) is precisely the entry point for SPHERE.IO.|document organisation|document organisation|document organisation|document organisation||
+There is also a Payment class, a small library that will help to communicate with the Optile API, that requires the messages to be sent using XML|system|structure|s-implementation|s-techsolution||
+As explained before (see section 4.2.1.2), Optile needs to be implemented in an incremental way, reason why the library can effortless cover all five levels of integration, thus allowing developers to easily switch to the level it fits best for them.|system|structure|s-implementation|s-techsolution|rationale|directive
+The system also requires a class to send emails through any email system of preference.|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+The Mail class will cover this functionality, as long as the SMTP17 details of the email system are provided.|uncertain|uncertain|uncertain|uncertain||
+Given that Heroku does not provide an internal SMTP server, the deployed version of this project will need to use an external server like Mailjet, a cloud emailing platform that offers several features that may be of interest for potential clients.|system|structure|s-implementation|s-techsolution||directive
+The Model component is also containing different helpers, where some particular logic of this web-shop is located.|system|structure|s-architecture|s-architecture||
+The ControllerHelper is composed of methods that allows to abstract some common logic that is used in the Controller component (i.e. logic to handle and display messages and errors) or data coming from SPHERE.IO requiring some previous manipulation before it is used (i.e. get default category of a product or get address book of the current customer).|system|structure|s-architecture|s-architecture||
+On the other hand, the View Helper is a common design pattern that allows to separate logic that otherwise needs to be integrated in the template, in this project applied with the ViewHelper class.|system|structure|s-architecture|s-architecture||
+Although templates in Play Framework enables to use all the potential of the programming language Scala, it is a good practice to keep complex logic out of the templates.|development process|development practice|development practice|development practice||directive
+All this logic is then placed in these helper classes and called from the views as necessary.|system|structure|s-architecture|s-architecture||
+Lastly, there are a group of classes related to the web forms and the payment information received by the system (see Figure 4.34).|uncertain|uncertain|uncertain|uncertain||
+They handle all the server-side validation for every parameter and may also provide helpful getters and setters to easily convert model data into form data, and vice versa (e.g. an Address class instance would be converted into the appropriate form fields street, city, country, etc.)|system|structure|s-implementation|s-sourcecode||
+These form classes also host the methods generating the different content that must be sent back to the client in relation to the result of the form submission.|system|structure|s-implementation|s-sourcecode||
+For example, when updating a line item from the cart, a success response contains a message for the user and all the shopping cart related information.|uncertain|uncertain|uncertain|uncertain||
+This related information is generated with some other methods located in the forms as well, that convert a model class instance into JSON data.|system|structure|s-implementation|s-sourcecode||
+Due to the design of the system, the client side has also some important elements from the Model component.|system|structure|s-architecture|s-architecture|rationale|
+Although the separation between Model and Controller is not properly defined in the client side, mainly because of the simplicity of the business logic located there, there are also some client-side classes that are dedicated mainly to processing and validation purposes (see Figure 4.35).|system|structure|s-architecture|s-architecture||
+On the one hand there are some classes in charge of different elements that are affected by multiple operations throughout the web-shop, such as the mini cart and the pricing detail of a cart.|uncertain|uncertain|uncertain|uncertain||
+Aside from the methods to control the behavior of the elements, there are methods that allow to replace the page component data with some JSON data fetched from the server.|system|structure|s-implementation|s-sourcecode||
+On the other hand there is a Form class that gives support to all forms of the system, by validating, displaying messages, marking invalid fields and managing AJAX calls when submitting.|uncertain|uncertain|uncertain|uncertain||
+4.2.5 Design of the View Component|uncertain|uncertain|uncertain|uncertain||
+The View component is formed of several templates that are directly called by the Controller component, as seen in the internal design diagrams of the system.|system|structure|s-architecture|s-architecture||
+All these templates are making use of a main template file that provides a common HTML structure to all the pages, such as the basic contents and imports of scripts and stylesheets.|system|ui design|u-implementation|u-implementation||
+They achieve this by importing the main template, following the design pattern called View Composition (Figure 4.36).|system|structure|s-architecture|s-architecture||
+Just as in the previous example, the composite views are importing the contents of many other simple views, like the helpers and forms displayed in Figure 4.37.|uncertain|uncertain|uncertain|uncertain||
+Both types of templates are usually offering components that are repeated throughout all client pages, although sometimes the separation is only intended to extract large pieces of meaningful HTML content from the composite views, as it is usually the case of the form templates.|system|structure|s-architecture|s-architecture||
+Unlike forms and helpers, mail templates are not meant for view composition, but are directly used to generate the HTML body of the emails sent by the system.|system|structure|s-architecture|s-architecture||
+As explained earlier (see section 4.2.1.7), the system is using Handlebars templates on the client side in order to generate updated content.|system|structure|s-implementation|s-techsolution||
+Below all necessary templates for the system are displayed (see Figure 4.38), which belong on the one hand to the mini cart and pricing details components, and on the other hand to the use cases for product pagination, checkout and address management.|document organisation|document organisation|document organisation|document organisation||
+4.2.6 Design of the Controller Component  |uncertain|uncertain|uncertain|uncertain||
+Play Framework is applying the Front Controller and Application Controller design patterns to split the Controller logic between the common logic, located in the Front Controller, and the one specific for each request, called Application Controller.|system|structure|s-architecture|s-architecture||
+The Front Controller is mainly formed by the RoutingSystem, which is in charge of receiving, analyzing and dispatching every request to the appropriate application controller.|system|behaviour|b-implementation|b-general||
+All application controllers of the system are shown in Figure 4.39, along with some classes that are used as filters.|document organisation|document organisation|document organisation|document organisation||
+These filters intercept the application controller invocation and allows to execute code before and after the action is invoked.|system|behaviour|b-implementation|b-general||
+Filters are applied as a chain of filters to any desired controller action, although for simplicity the diagram is not specifying which particular actions are using the filter.|system|behaviour|b-implementation|b-general||
+A typical filter example is the Authorization class, that verifies the customer is correctly identified to the system before accessing a restricted functionality, otherwise it redirects the user to the login screen.|system|structure|s-implementation|s-sourcecode||
+The CartNotEmpty filter checks the shopping cart has at least one line item, a requirement to access certain areas such as the cart detail page or the checkout, otherwise it redirects to the last visited browsing page.|system|structure|s-implementation|s-sourcecode||
+This last visited page is actually saved using the SaveContext filter, so that only actions intercepted by this filter are saved as a return page.|system|structure|s-implementation|s-sourcecode||
+It was considered a good navigation behavior to save only pages related to products (i.e. product list and detail screens), leaving out checkout and customer management pages.|system|ui design|u-implementation|u-implementation||
+Finally, the Form filter class enables the transparent handling of a form submission response, independently of the technology used.|system|structure|s-implementation|s-sourcecode||
+This allows to switch from AJAX to a regular HTML form without any changes, only disabling the form submission handling in JavaScript.|system|structure|s-implementation|s-techsolution|rationale|
+The filter helps developers to build both thin- and fat-client systems on top of the same Controller and View components.|system|structure|s-architecture|s-architecture||
+Figure 4.40 shows the files of the Controller component on the client side.|document organisation|document organisation|document organisation|document organisation||
+These files are dedicated to handle some of the events triggered by the user (e.g. form submission or page scrolling) in a specific page or component.|uncertain|uncertain|uncertain|uncertain||
+The same files host other presentation logic used by the handlers, as well as methods to load new components from JSON data fetched from the server.|system|structure|s-implementation|s-sourcecode||
+5 IMPLEMENTATION|uncertain|uncertain|uncertain|uncertain||
+The implementation section is describing the actual process followed to develop the web-shop presented in the previous chapters.|document organisation|document organisation|document organisation|document organisation||
+On the one hand is explained the set environment (section Development Environment 5.1), such as the software to assist the implementation or the stages of the development pipeline.|document organisation|document organisation|document organisation|document organisation||
+On the other hand, some examples are detailed, along with the corresponding pieces of code, where it is shown how every technology is applied in order to solve some particular requirement (section Examples of Used Technologies 5.2).|document organisation|document organisation|document organisation|document organisation||
+5.1 Development Environment|uncertain|uncertain|uncertain|uncertain||
+The development pipeline consists of three stages: development, staging and production.|system|structure|s-architecture|s-architecture||
+The development environment is a portable machine with OS X as operative system.|development process|development practice|development practice|development practice||
+The source code is developed with the support of the Java IDE Intellij IDEA Community Edition, mainly used for its debugging and code edition features.|development process|development practice|development practice|development practice|rationale - benefit|
+Google Chrome is the preferred web browser, which has a built in developer tool, Chrome DevTools, highly useful to inspect HTML DOM and CSS, as well as debugging JavaScript code.|system|structure|s-implementation|s-techsolution|rationale - benefit|directive
+Git is used as a revision control system|development process|development practice|development practice|development practice||directive
+The most notable characteristic of Git is its distributed system, in which each user has his own local repository where changes are committed.|development process|development practice|development practice|development practice|rationale - benefit|
+Only when the developer deems it convenient, the local changes are then synchronized with the remote repository, thus making them accessible to the whole team.|development process|development practice|development practice|development practice|rationale - benefit|
+The remote repository is hosted by GitHub, with a very interesting social networking functionality useful for future collaboration with the developer community.|development process|development practice|development practice|development practice||
+In everyday’s development, Continuous Deployment technique is followed (see Figure 5.1).|development process|development practice|development practice|development practice||directive
+Jenkins is used in the staging environment as a continuous deployment tool, triggering a process to deploy the system every time changes are pushed to the remote repository.|development process|development practice|development practice|development practice||directive
+This process consists of building and testing the system, running automated acceptance test and deploying the project to production once staging is stable and ready.|development process|development practice|development practice|development practice||
+Whenever these steps fail at some point, the process is stopped and feedback is registered in order to solve the problem.|development process|development practice|development practice|development practice||
+For this to work, every new feature developed for the system should always go along with tests validating that feature.|development process|QA|testing|testing||
+Automating these tests on a staging system allows to flawlessly merge small pieces of code with the mainline of the project at a rapid pace.|development process|QA|testing|testing||
+The code merging also triggers a review process with all developers involved, which results in higher code quality.|development process|development practice|development practice|development practice|rationale - benefit|
+Besides, acceptance tests that verify the business logic can be run each time to ensure that the project requirements are met.|development process|QA|testing|testing||
+5.2 Examples of used technology|uncertain|uncertain|uncertain|uncertain||
+Next are presented three different examples of functionalities that allow to demonstrate how technologies are used in the project.|document organisation|document organisation|document organisation|document organisation||
+These examples have been selected according to the importance of the process within the system or because it presented some challenges that are worth being mentioned.|uncertain|uncertain|uncertain|uncertain||
+Code generation required some extra effort to guarantee the stability of the system when data from the e-commerce backend is changed.|uncertain|uncertain|uncertain|uncertain||
+Although the set of data used in the template has some fixed characteristics, the system has been implemented to support any kind of data that may be variable, such as product attributes, categories or currencies.|system|data|d-architecture|d-architecture||
+The primary goal is to avoid crashing the system or break some elemental functionality when data is changed.|uncertain|uncertain|uncertain|uncertain||
+5.2.1 Forms|uncertain|uncertain|uncertain|uncertain||
+Any form submission requires the use of most of the technologies presented in this project, making this functionality very appropriate to show examples of how the technologies are used.|uncertain|uncertain|uncertain|uncertain||
+In particular, the update item in cart use case is going to be explained, which design was already detailed in the section Internal Design 4.2.3.|document organisation|document organisation|document organisation|document organisation||
+As mentioned before, form data can be either sent as a regular HTML form submission or via an AJAX call, indistinctly.|system|behaviour|b-implementation|b-techsolution||
+The server logic processes both requests the same way thanks to the intercepting filter Form.java, which is in charge of returning the most convenient response to the client.|system|behaviour|b-implementation|b-general||
+This system improves understandability and changeability of the code, as it will be explained along this section.|requirement|non-functional|non-functional|non-functional||
+The flowchart below (Figure 5.2) illustrates the process that takes place from the moment the user submits the form until the server returns a response.|document organisation|document organisation|document organisation|document organisation||
+As a guide, on the left side is indicated the element or file where each action is executed in this particular use case, although the process itself is the same for every use case with form submission.|uncertain|uncertain|uncertain|uncertain||
+The source code corresponding to some of these actions is presented in this section, along with some detailed explanation.|system|structure|s-implementation|s-sourcecode||
+When the user is submitting a form, the HTML DOM triggers an event that is then captured by a handler.|system|behaviour|b-implementation|b-techsolution||
+The handler stops the regular form submission and sends the request via AJAX.|system|behaviour|b-implementation|b-techsolution||
+If the handler is not found, the form is submitted in a traditional way to the server via HTML forms.|system|behaviour|b-implementation|b-techsolution||
+Below is displayed the specific Coffeescript code that implements the handler for the update item in cart use case (see Figure 5.3).|system|structure|s-implementation|s-sourcecode||
+In this particular case the handler is not called after submission, but after changing the value of the input field for the quantity.|uncertain|uncertain|uncertain|uncertain||
+It is interesting to notice the use of the “on” jQuery method to bind the event handler.|system|structure|s-implementation|s-sourcecode||
+As shown below there are three different ways to bind an event: the first method is preferred and is actually a shortcut of the second one (see Figure 5.4).|system|structure|s-implementation|s-sourcecode||
+The difference between these two and the last method lies in the object to which the event handler is attached when the script is loaded.|system|structure|s-implementation|s-sourcecode||
+While the handler is directly attached to the quantity input in the first two options, in the latter is attached to the HTML object identified by “cart”, specifying as a parameter the path of the quantity input.|system|structure|s-implementation|s-sourcecode||
+This difference is important when a particular object that can trigger the event may not exist at load time, which is the case of this form, since all the line items are being loaded via AJAX after the page is loaded.|uncertain|uncertain|uncertain|uncertain||
+In this case the event is attached to a stable parent object, so that jQuery executes the handler for every descendant object that matches the path.|uncertain|uncertain|uncertain|uncertain||
+Submitting the form each time the input value is changed can lead to an excess of calls to the server if the user changes the quantity value too often.|development process|QA|risk|risk||
+This has been solved with a delayed submission, implemented with the JavaScript event setTimeout, which is restarted every time the user changes the input field (see Figure 5.5 for an example of CoffeeScript code based on this functionality).|system|structure|s-implementation|s-sourcecode||
+This JavaScript timing event executes a function that is called after the specified period of time, in this case sending the form data via AJAX and processing the response accordingly.|system|structure|s-implementation|s-sourcecode||
+In order to handle forms easily a new instance of the Form class is created, which processes all data related to the form to allow quick access to the information (see Figure 5.6).|system|structure|s-implementation|s-sourcecode|rationale|
+The method for sending the form data is simply calling the jQuery “ajax” function, additionally specifying in the URL that the request is performed via AJAX.|system|structure|s-implementation|s-sourcecode||
+The method returns jqXHR, a XMLHttpRequest object with jQuery added information.|system|structure|s-implementation|s-sourcecode||
+A series of methods can be chained to the jqXHR object, and executed once the server response has been received under certain circumstances.|system|structure|s-implementation|s-sourcecode||
+It is the case of “done” for successful requests, “fail” for failures and “always” for any condition; all of them used in this use case.|uncertain|uncertain|uncertain|uncertain||
+Once the request reaches the server, the routing system built in Play Framework analyses the incoming HTTP method and the request path to decide the action controller to be invoked.|system|behaviour|b-implementation|b-techsolution||
+For that matter, the system reads a file where every request pattern is linked with an action controller (see Figure 5.7), and selects the first pattern that matches the request.|system|behaviour|b-implementation|b-general||
+In addition, routing patterns can also have dynamic parts using the power of regular expressions.|system|behaviour|b-implementation|b-general||
+Figure 5.8 below shows the invoked controller action for this particular use case.|document organisation|document organisation|document organisation|document organisation||
+Right before the method definition one can notice the “With” annotation, which Play Framework provides in order to attach a set of intercepting filters to an action.|system|structure|s-implementation|s-sourcecode||
+In this case the filter that intercepts the call is the Form class, in charge of detecting, before the action in called, whether the request from the client was made via AJAX.|system|behaviour|b-implementation|b-techsolution||
+The controller has a static attribute of an instance of Play’s native Form, wrapping the class UpdateCart that handles incoming parameters to execute this action.|system|structure|s-implementation|s-sourcecode||
+When starting the call, the request is bound to the form instance and is checked for missing or invalid data, in which case errors are prepared for being displayed and the cart page is returned as a “bad request” (i.e. with a 400 HTTP status code).|system|behaviour|b-implementation|b-general||
+When the request contains no errors, the SPHERE.IO Play SDK is called to update the cart, setting the new quantity requested for a particular line item.|uncertain|uncertain|uncertain|uncertain||
+Then the success messages are prepared and the cart page is returned, this time with a 200 HTTP status code.|system|behaviour|b-implementation|b-general||
+The controller code appears therefore simple and clean of all related presentation logic.|system|structure|s-implementation|s-sourcecode|rationale|
+This is particularly important for this project, as controllers are the main place where SPHERE.IO Play SDK is used to execute e-commerce logic.|system|structure|s-architecture|s-architecture||
+Here is where code is most required to be understandable.|requirement|non-functional|non-functional|non-functional||
+As seen in Figure 5.9 below, the message method consists of saving on the one hand a success message for the HTML result and, on the other hand, the JSON data with the same success message and the necessary cart information.|system|structure|s-implementation|s-sourcecode||
+The source code is also showing how request parameters are defined in a form, so that Play can bind and validate them.|system|structure|s-implementation|s-sourcecode||
+Some annotations are provided in order to specify constraints to incoming parameters, such as declaring a value required or accepting only a certain range.|system|structure|s-implementation|s-sourcecode|rationale|
+Any other type of pattern-based limitation can be applied as well with regular expressions.|system|structure|s-implementation|s-sourcecode||
+Once the action call finishes, the intercepting filter again takes control, receiving as a result of the call a HTML file with a HTTP status code (see Figure 5.10).|system|behaviour|b-implementation|b-techsolution||
+In some cases the result can also be a URL redirection instead of a HTML file, like is the case of the login use case.|system|behaviour|b-implementation|b-techsolution||
+On the other hand, the filter has access as well to all JSON data that was stored earlier.|uncertain|uncertain|uncertain|uncertain||
+So according to the type of incoming request, the filter returns either the result coming from the action call or a JSON response with the same HTTP status code.|system|behaviour|b-implementation|b-techsolution||
+This system allows future developers to add new ways of handling form submissions without affecting the core of the system.|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+Disabling a method, such as AJAX submission, is as simple as removing the event handler bound to the submit.|system|structure|s-implementation|s-sourcecode||
+Therefore the changeability of the code is not affected by the complexity of the presentation logic meant to improve user experience.|requirement|non-functional|non-functional|non-functional|rationale|
+When the AJAX call started on the client receives the response from the server, the methods chained to the jqXHR are then executed, depending on the HTTP status code obtained.|system|behaviour|b-implementation|b-techsolution||
+In the current use case, if the response was successful, the pricing details and the mini cart will be replaced with new generated content, and each line item will be updated.|uncertain|uncertain|uncertain|uncertain||
+Moreover, some common logic for successful form submissions is executed, which source code is shown in detail below (see Figure 5.11).|system|structure|s-implementation|s-sourcecode||
+This common logic allows to handle properly the response sent by the Form intercepting filter: when required, it forces to handle URL redirections by executing a redirection with JavaScript, otherwise it updates automatically some tagged data from the page and displays the success message.|system|behaviour|b-implementation|b-techsolution||
+As mentioned before, each line item on the page is updated with every successful submission.|system|ui design|u-implementation|u-implementation||
+Actually the only element from the line items that needs to be updated is the total line item price (i.e. the product price multiplied by the new quantity), and this calculation could even be performed on the client side.|uncertain|uncertain|uncertain|uncertain||
+But all the required data is already included in the JSON data nonetheless, needed to update the mini cart.|uncertain|uncertain|uncertain|uncertain||
+Besides it is safer to always force a complete update of the cart contents, in case the user changes the cart from another browser window.|uncertain|uncertain|uncertain|uncertain||
+The method displayed in Figure 5.12 is the one in charge of replacing the cart line items.|document organisation|document organisation|document organisation|document organisation||
+To do so, the Handlebars template that renders a single line item is obtained and compiled once when the page is loaded.|system|behaviour|b-implementation|b-techsolution||
+When the method is called, the current contents of the cart are removed from the cart container and each line item is rendered with the template and then appended to it.|uncertain|uncertain|uncertain|uncertain||
+The following two figures helps one understand how these templates are being rendered.|uncertain|uncertain|uncertain|uncertain||
+The first one corresponds to the template itself (Figure 5.13), with the Handlebars expressions surrounded by curly brackets.|system|structure|s-implementation|s-sourcecode||
+When the expression starts with a hash symbol, the expression corresponds to a helper to control the flow, like the looping statement “each” used here.|system|structure|s-implementation|s-sourcecode||
+Otherwise it refers to a value extracted from the JSON data sent as parameter to the template.|system|structure|s-implementation|s-sourcecode||
+An extract of the JSON data is presented next (Figure 5.14), as it is received by the client after the request.|system|behaviour|b-implementation|b-techsolution||
+It should be noted that the replaceCart method is only sending to the template one “item” object each time.|system|structure|s-implementation|s-sourcecode||
+It is easy then to understand the correspondence between the JSON data and the expressions appearing in the template.|uncertain|uncertain|uncertain|uncertain||
+5.2.2 List Products|requirement|feature|feature|feature||
+Product listing is another interesting feature in the implementation process.|requirement|r-general|r-general|r-general||
+As explained in the section Internal Design 4.2.3, pages of products are being loaded automatically when the user is near the bottom of the page.|system|ui design|u-architecture|u-architecture||
+This way customers are not fully aware of browsing through pages, from their point of view new products are constantly presented as they scroll down the window of the browser, in what appears to be a large single page.|system|ui design|u-architecture|u-architecture||
+Figure 5.15 below illustrates the code of a function that decides when the page needs to load more products and when a button to allow a quick return to the top of the page is shown.|system|ui design|u-architecture|u-architecture||
+The criteria to execute both actions depend on the vertical scrolling position of the display, so this position needs to be checked regularly for changes.|system|ui design|u-implementation|u-implementation||
+One option was to trigger the function whenever the user scrolls, but this event is fired too often when scrolling and would affect negatively the performance of the page.|system|ui design|u-architecture|u-architecture|rationale - drawback|
+An alternative is to execute the function in a fixed interval of time, that balances a smooth navigation with a fast loading before the user reaches the bottom.|system|ui design|u-architecture|u-architecture||
+The method to load more products calls the server via AJAX, requesting to the controller action below a particular page of a list of products.|system|behaviour|b-implementation|b-techsolution||
+The action starts building the product search request that is sent to SPHERE.IO backend in order to get the desired list of products, first requesting all products available.|system|behaviour|b-implementation|b-techsolution|rationale|
+If a category slug was provided, the category object is fetched from SPHERE.IO and is used to filter the initial list in the filterBy method, which source code is presented next (Figure 5.16).|system|structure|s-implementation|s-sourcecode||
+The search of products can be performed with either regular filters (e.g. all products within a price range) or faceted searches, in which is returned, besides the list of filtered products, all possible options for that attribute and the number of products that belong to each options (e.g. a faceted search for the color attribute returns all possible colors for that search and, for each color, the number of products with that color).|system|ui design|u-architecture|u-architecture||
+SPHERE.IO Play SDK provides a set of filter and faceted search expressions to flexibly build requests for products matching a certain criteria for a certain attribute.|uncertain|uncertain|uncertain|uncertain||
+For example, above is used a category filter expression to get all the products that are present in the set of categories provided, or any of the descendent categories (see Figure 5.17).|uncertain|uncertain|uncertain|uncertain||
+The SDK also offers some classes to help implementing filters for the user interface, such as search boxes to find products.|development process|development practice|development practice|development practice||
+These classes have methods to parse the filter values from the URL query string and build the product search request from those values easily.|system|structure|s-implementation|s-sourcecode||
+They can also provide some useful data for specific filters, like the maximum and minimum prices of a product list for the price filter.|uncertain|uncertain|uncertain|uncertain||
+Figure 5.18 shows the code that declares two of the filters used in this project with the corresponding keyword used in the URL query string.|system|structure|s-implementation|s-sourcecode||
+They are both included in the filter list that is directly bound to the request in the Figure 5.17.|document organisation|document organisation|document organisation|document organisation||
+The only piece missing to have a functional product search is the template rendering the search form, shown below (Figure 5.19).|document organisation|document organisation|document organisation|document organisation||
+The HTML input name and value are obtained from the fullTextSearch parameter defined before, hence connecting the user filter interface with the SPHERE.IO filter request.|system|structure|s-implementation|s-sourcecode||
+As can be observed, in a Scala template expressions to be evaluated with Scala are preceded by a “@” sign.|system|structure|s-implementation|s-techsolution||
+This way classes can be imported and used directly in the template like is the case with the filter fullTextSearch.|uncertain|uncertain|uncertain|uncertain||
+It is also interesting to notice how URLs are generated, using the corresponding “reverse routing” method for the controller action that handles searches.|system|structure|s-implementation|s-sourcecode||
+Using the methods for sorting (Figure 5.20) and paging (Figure 5.21) is very simple, as the two pieces of code above demonstrates.|system|structure|s-implementation|s-sourcecode|rationale|
+Sorting is achieved by specifying the correct sorting criterion, provided via a ProductSort enumeration that contains all the possibilities currently offered by the SDK.|uncertain|uncertain|uncertain|uncertain||
+Pagination requires the desired page and the amount of products per page.|system|ui design|u-implementation|u-implementation||
+Once the request is completely built, the list of products is fetched from the SPHERE.IO backend and sent to the client as JSON data.|system|behaviour|b-implementation|b-techsolution||
+When the response is received on the client side, the method appendProducts shown above (Figure 5.22) is called to attach the new data to the previous list and update the information about the next page.|system|behaviour|b-implementation|b-general||
+In order to achieve the product grid layout described in the section External Design 4.2.2, the JavaScript library Masonry has been used.|system|ui design|u-implementation|u-implementation|rationale|
+This library takes all available space of the parent container and places each product thumbnail in optimal position, forming a condensed grid where elements perfectly fit together.|system|ui design|u-implementation|u-implementation||
+A small library called imagesLoaded is also used to fire an event when all the images of the products have been fully loaded, so that Masonry can use the correct final size of each thumbnail.|system|ui design|u-implementation|u-implementation|rationale|
+Thumbnails are showing at first a certain product variant, but they should also allow to see and buy a different variant directly from the thumbnail.|system|ui design|u-implementation|u-implementation|rationale|
+This functionality is only enabled for color and size attributes variations, as more attributes would saturate the design.|system|ui design|u-architecture|u-architecture|rationale|
+A list of variants is received from the server, with matching attributes but different color.|system|behaviour|b-implementation|b-general||
+The different variants are displayed as small pictures, and when the user hovers the cursor on these pictures the thumbnail variant changes to the hovered one, replacing all variant related information.|requirement|use case|use case|use case||
+As shown in the Handlebars template presented in Figure 5.23, there are several data that can change amongst variants: image, price, available sizes and, of course, the variant identifier.|system|ui design|u-architecture|u-architecture||
+In order to determine the image and sizes for each variant, Handlebars helpers have been used.|system|structure|s-implementation|s-techsolution|rationale|
+The helper to generate the image is displayed in Figure 5.24, which sets as the new context a specific size of the picture, depending on whether the product is featured or not.|document organisation|document organisation|document organisation|document organisation||
+When a product variant has different sizes, a list of sizes is shown to the customer when he hovers on the “quick buy” button, to allow him select the correct size.|requirement|use case|use case|use case|rationale|
+Next is shown the style applied to the list of sizes, as an example of the use of LESS to generate CSS stylesheets (see Figure 5.25).|system|structure|s-implementation|s-techsolution||
+The example uses the most important features of LESS: variables, here used for colors; functions, used to apply the CSS border-radius property cross-browser; mixins, to remove the default style of the list; and nested rules, to better specify inheritance.|system|structure|s-implementation|s-techsolution||
+5.2.3 PAYMENT|uncertain|uncertain|uncertain|uncertain||
+A notable initial effort was required in order to integrate Optile in a flexible way.|system|structure|s-implementation|s-techsolution||
+But despite of the fact that the payment platform was in the end correctly integrated in the system during the implementation process, the final result was not entirely satisfactory and was replaced for the second option: Paymill.|system|structure|s-implementation|s-techsolution|Rationale|
+The problem resided on a certain incompatibility in the checkout process designed for the SPHERE.IO Play SDK and the workflow expected by Optile.|system|structure|s-implementation|s-techsolution||
+The Optile workflow was already explained (see section 4.2.1.2), but the most characteristic behavior to remember is that it uses notification requests in order to keep the payment state of an order updated.|system|structure|s-implementation|s-techsolution||
+Each notification needs to be handled, otherwise the SPHERE.IO backend may have wrong payment information.|uncertain|uncertain|uncertain|uncertain||
+On the other hand, the SPHERE.IO Play SDK was initially designed so that the creation of an order cannot be reversed.|system|structure|s-implementation|s-techsolution||
+This means that once the order is created the customer’s cart does not longer exist, so the only possible moment to create the order is right after the payment has succeed.|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+But then the order creation process can still fail under some expected scenarios and charge the customer without actually buying the items.|uncertain|uncertain|uncertain|uncertain||
+The source code below shows the required workflow by SPHERE.IO Play SDK in order to create an order, and how the creation needs to be stopped if the customer changes anything from the cart (Figure 5.26).|system|structure|s-implementation|s-sourcecode||
+Of course a payment cancellation can always be requested in failure cases, the customer is usually already charged but then he is refunded, depending on the payment provider.|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+But this behavior was considered to be too uncomfortable for the customer, especially because of the uncertainty of a scenario that should be perfectly controlled.|uncertain|uncertain|uncertain|uncertain|rationale|
+Besides, there were other minor issues adding more instability to the process, so it was not considered a good solution for the implementation of the template until the issues were solved.|uncertain|uncertain|uncertain|uncertain|rationale|
+Paymill, despite of accepting only direct debit and credit cards as payment methods, allows on the other hand to keep control of the workflow along the process, thus allowing to charge the customer only when the order can be created.|system|structure|s-implementation|s-techsolution|rationale|
+This is achieved by separating the submission of the payment data from the proper charging to the customer.|uncertain|uncertain|uncertain|uncertain||
+The payment data is sent via JavaScript to the platform, using a library provided by Paymill.|system|structure|s-implementation|s-techsolution||
+This request is executed the moment the customer submits the payment form, and returns a token in response.|system|behaviour|b-implementation|b-general||
+The token is attached to the checkout form, so when the customer submits the final form this token is sent to the server.|system|behaviour|b-implementation|b-general||
+Figure 5.27 shows the code snippet that is part of the class that was implemented to help validating the payment form and sending the data.|system|structure|s-implementation|s-sourcecode||
+Once the checkout form submission reaches the server, the system has complete control over the order creation and payment execution, as the next code shows (Figure 5.28).|system|behaviour|b-implementation|b-general||
+First the cart is checked for any changes, then the customer is charged and, only when it is successful, the order is created.|requirement|use case|use case|use case||
+This process is robust and ensures that no customer is charged without the order being created.|uncertain|uncertain|uncertain|uncertain||
+But this system lacks flexibility, because it expects that the payment is executed immediately in a single step, which result cannot be changed.|uncertain|uncertain|uncertain|uncertain|rationale|
+Unfortunately some payment providers, such as PayPal, are first requested and then the payment is executed at some moment in the future.|system|structure|s-implementation|s-techsolution|rationale - drawback|
+Therefore Paymill is not a solution strong enough for this template either, but at least it offers a robust solution until SPHERE.IO and Optile evolve to become fully compatible.|system|structure|s-implementation|s-techsolution|rationale - drawback|
+6 System Tests|development process|QA|testing|testing||
+This section describes all kind of tests that have been run against the system, both periodical and one-time tests.|document organisation|document organisation|document organisation|document organisation||
+This system triggers only those tests that allow to check the functional requirements of the system, called functional tests, but any other type of automated test can be executed as well to check, for example, that the response time of the system is within the agreed limit.|development process|QA|testing|testing||
+After functional testing is explained (section Functional Tests 6.1), the next section covers the usability tests used to check those non-functional requirements related to user and developer experience (section Usability Tests 6.2).|document organisation|document organisation|document organisation|document organisation||
+And although it was not explicitly a requirement, it has been considered important to run some performance tests in order to detect and possibly fix those issues that may slow down the application (section Performance Tests 6.3).|development process|QA|testing|testing|rationale|
+The rest of requirements do not need any special setup to be checked.|uncertain|uncertain|uncertain|uncertain||
+For example, in order to check the stability of the system, it is enough to change the SPHERE.IO project to another project with different structure of data and see if it meets the specified requirement (see list in Appendix B.2).|uncertain|uncertain|uncertain|uncertain||
+6.1 Functional test|development process|QA|testing|testing||
+As explained in the section Development Environment 5.1, this project follows a continuous deployment process which requires functional tests to be implemented along with the feature, to ensure the functionality is working correctly every time a change is merged with the project.|development process|QA|testing|testing|rationale|
+A major difficulty of developing functional tests in this project is that they should work with any set of commerce data, so that when developers switch from the test web-shop data to their own, the tests are still functional.|development process|QA|testing|testing||
+Tests must therefore be independent from the backend data used.|development process|QA|testing|testing|rationale|
+The best way to achieve this is mocking the Sphere class that handles the requests and responses from the SPHERE.IO backend, to simulate the call to the backend getting only controlled information as response.|uncertain|uncertain|uncertain|uncertain||
+This means that during the tests execution, all objects returned by the class whenever a call to the backend is theoretically executed are actually objects constructed by the testing code.|development process|QA|testing|testing||
+Not only this solution allows to execute the tests independently of the system’s environment, but moreover performance is improved significantly since no remote resources are used, which hastens the feedback provided by the continuous development process.|development process|QA|testing|testing|rationale - benefit|
+Also, mocking allows to easily test any situation that may prove complicated otherwise, like provoking certain errors from the backend (e.g. a “500 Internal Server Error” HTTP status code).|development process|QA|testing|testing|rationale - benefit|
+At the moment this project was developed there was no support for mocking coming from the SPHERE.IO Play SDK to ease this process.|system|structure|s-implementation|s-techsolution||
+Besides the initial design was not contemplating the possible need to manipulate the response, so mostly all classes had private constructors, thus forcing the necessity to mock practically all SDK classes involved in the system and stub every method before any test could actually be executed.|development process|QA|testing|testing|rationale|
+In most cases, SDK logic that was intended to work directly had to be simulated first in order to mock other classes, sometimes changing excessively the original behavior of the SDK.|development process|QA|testing|testing||
+Not only this process proved to be notably complex, but also testing code became messy and at some point it was even difficult to be sure that the tests were really meaningful.|development process|QA|testing|testing||
+So in the end only the classes related to browsing products were completely mocked, ensuring at least some example tests to include with the template until a better approach is discussed and provided with the SPHERE.IO Play SDK.|development process|QA|testing|testing||
+One of the best solutions for the developers would be to offer some methods to directly mock the response from the server, without requiring the developer to understand the internal structure of the SDK.|development process|QA|testing|testing||
+The selected technology to mock Java code was Mockito, a very popular testing framework due to the simplicity of the resulting code, yet a complete solution like any of the alternatives.|development process|QA|testing|testing|rationale|
+Figure 6.1 presents an extract of the source code in charge of mocking the search request for products.|development process|QA|testing|testing||
+In this example, the only element that is actually interesting to modify amongst tests is the list of products returned, all other stubbed methods and mocked objects are just adding unnecessary complexity to the code.|development process|QA|testing|testing||
+The functional tests are designed after the descriptions given for the functional requirements of the system, which are detailed in the Appendix B.1.|development process|QA|testing|testing||
+These aspects should be eventually covered by the set of unit, integration and acceptance tests as a whole; always taking into consideration that unit tests are using fewer resources than the others, in opposition to acceptance tests, which are the most resource-intensive of all.|development process|QA|testing|testing||
+This means that unit testing will be preferably used to test everything that can be possibly covered by it, while acceptance tests will be left for giving feedback about the proper functioning of the system to the future clients.|development process|QA|testing|testing|rationale|
+6.1.1 UNIT TESTS|development process|QA|testing|testing||
+Unit tests are focused on checking the correct behavior of individual components when they are isolated from the rest of the system.|development process|QA|testing|testing||
+JUnit is the testing framework provided by Play to implement unit tests for the web application, allowing testing each route in the routing system, each controller action and each template individually.|development process|QA|testing|testing||
+Template testing is useful to check the correct behavior of some common elements, such as the mini-cart or the breadcrumb generation shown in Figure 6.2.|development process|QA|testing|testing||
+To assert on HTML content returned by the implementation, the library Jsoup is used to find and extract the data in a simple and clean way thanks to DOM traversal and CSS selectors.|system|structure|s-implementation|s-techsolution|rationale|
+The routing system is tested by verifying that all the required routes are found by the system, while the controller actions are tested setting up different requests and checking the response is as expected.|development process|QA|testing|testing||
+The test should analyze the HTTP status code, content type and charset of the response are correct, as well as to verify that the content is well formed and displays correct information.|development process|QA|testing|testing||
+In Figure 6.3 below it is shown how the Sphere class is mocked with certain products to be returned by the product request.|development process|QA|testing|testing||
+Then the action is called with a category slug and requesting the second page.|uncertain|uncertain|uncertain|uncertain||
+The type of result is verified and its content, in this case JSON data, is then analyzed to check the required products are sent.|development process|QA|testing|testing|rationale|
+After that, the search request prepared for the backend is examined with Mockito, verifying that the correct filters were applied and the second page was actually requested before mocking the response.|development process|QA|testing|testing||
+Unfortunately the former case is still not possible because the FilterExpression is lacking an overridden equals method to compare them, so currently the test would always fail.|development process|QA|testing|testing||
+6.1.2 Integration tests|development process|QA|testing|testing||
+Integration tests are in charge of checking that the previously tested components are correctly working together.|development process|QA|testing|testing||
+To prove that, Play Framework provides Selenium WebDriver to start a test browser and FluentLenium to easily write tests with it, wrapping the Selenium WebDriver in a convenient API with a fluent interface.|development process|QA|testing|testing||
+These tests will validate the proper functioning of the components when they are integrated in the web application.|development process|QA|testing|testing||
+Unlike unit testing, here the tests only need to verify that the response is the expected when an action is requested.|development process|QA|testing|testing||
+The content is not checked, as this should be already verified by the unit tests.|development process|QA|testing|testing|rationale|
+Figure 6.4 below shows an example of how the test browser navigates to the home page and there clicks on a category, which displays the category page.|development process|QA|testing|testing||
+In this case the class used in the body element, as well as the title, are used to check whether the response is correct, but other ways are valid as well, such as checking the URL.|development process|QA|testing|testing||
+The navigation related logic have been separated from the testing logic, so that tests are better isolated and the navigation code is reused.|development process|QA|testing|testing|rationale|
+6.1.3 Acceptance tests|development process|QA|testing|testing||
+Acceptance tests are ensuring that the main requirements agreed for the project are met in the current version.|development process|QA|testing|testing||
+So they need to prove that it is possible for a user to achieve at least the main goals for which he is using the web application, reason why they will be covering the top-level use cases described in the early section Use Case Model 3.1.|uncertain|uncertain|uncertain|uncertain||directive
+Given that acceptance tests are guaranteeing the correctness of the current version, it is imperative to use real data instead of mocking it.|development process|QA|testing|testing|rationale|
+These type of tests need to be supervised by the client of the product, usually non-technical people.|development process|QA|testing|testing||
+This makes it a requirement to be easy to understand them by using a plain language to define the rules.|uncertain|uncertain|uncertain|uncertain||
+Cucumber is used in this project as a tool to write these acceptance tests, allowing to write the rules in plain text (see Figure 6.5), while describing the technical details of each rule in Ruby in a separated file.|development process|QA|testing|testing||
+Figure 6.6 shows how the rules are implemented for registering a new customer account.|document organisation|document organisation|document organisation|document organisation||
+The query language XPath is used to select the different HTML elements in order to click on them, change their value or verify their existence.|system|structure|s-implementation|s-techsolution||
+Error messages are always specified along with every action, so it becomes easy for non-technical people to identify any issue.|development process|QA|issue|issue||
+6.2 Usability tests|development process|QA|testing|testing||
+With iterative methodologies, usability tests would be ideally performed by the end of the sprint, so that tasks for fixing any issue resulting from the test output can be assigned to the next sprint.|development process|QA|testing|testing|rationale|
+This iteration is repeated until the reports from the tests are satisfactory, meaning that the user story is concluded.|development process|QA|testing|testing||
+But this system may not be convenient for most of the projects if the tests are meant to be too strict.|development process|QA|testing|testing||
+Usually during the Sprint Review Meeting, when a member of the team is showing the tasks he managed to accomplish, the other members are participating in the demonstration by evaluating and giving feedback, so that the feature can be improved further.|development process|development practice|development practice|development practice|rationale|
+This process already acts like an informal usability test every sprint.|development process|QA|testing|testing||
+Formal usability tests are still necessary in order to receive feedback from some controlled and prepared environments, giving a more reliable source of information.|development process|QA|testing|testing|rationale|directive
+Given that this project needed to reach some usability requirements focused both on developers and end users, it was necessary to set up two different scenarios separately.|development process|QA|testing|testing|rationale|directive
+On the one hand, an API hackathon about e-commerce was organized in April 2013, called Berlin ECOMMHACK I/O.|non-information|non-information|non-information|non-information||
+This hackathon consisted of developing an application connecting two or more of the participant platforms, amongst which was SPHERE.IO.|non-information|non-information|non-information|non-information||
+Contestants could use the web-shop of the current project as a template to implement their applications or just as documentation of the SPHERE.IO Play SDK.|non-information|non-information|non-information|non-information||
+As a result, two of the winning projects were based on the web-shop, developed by teams of four members average in within twelve hours.|non-information|non-information|non-information|non-information||
+Around September, a smaller hackathon of six hours was held internally, only for the staff of commercetools GmbH.|non-information|non-information|non-information|non-information||
+About five teams used the web-shop as a template, achieving notable results as well.|non-information|non-information|non-information|non-information||
+Both events and the feedback received allowed to improve the template, but also to confirm that the understability, learnability and changeability requirements expected for the current project were safely met.|non-information|non-information|non-information|non-information||
+On the other hand, a test was designed in order to evaluate the operability and likeability of the template by the users.|development process|QA|testing|testing|rationale|
+Five people were selected for this test [Nie12], all with different profiles of online shopping experience and computer expertise.|development process|QA|testing|testing||
+Their task consisted first of registering a new customer account and adding a postal address to their address book.|uncertain|uncertain|uncertain|uncertain||
+After that, they were told to add two specific products to the cart, which later they were asked to remove or modify in the cart.|uncertain|uncertain|uncertain|uncertain||
+Next, they had to purchase the products, using the address they previously entered.|uncertain|uncertain|uncertain|uncertain||
+Besides measuring the total time it took them to actually buy the items, it is most important to observe their reactions and ask them about their first thoughts regarding what they expect when they perform an operation.|development process|QA|testing|testing||
+This will give an insight of the most common usability issues and the best way to solve them.|requirement|non-functional|non-functional|non-functional||
+The results were very satisfactory and provided some issues with clear solutions.|development process|QA|issue|issue||
+For example, most of them had problems with the lack of loading animations when AJAX is performing a request in the background, which is something that has repeatedly been postponed, although it is practically implemented since the beginning.|development process|QA|issue|issue||
+Some evident examples they gave were the poor feedback the system shows when adding an address or selecting one during the checkout process.|development process|QA|issue|issue||
+In contrast, they apparently did not have any trouble with browsing products and navigating throughout the web-shop.|uncertain|uncertain|uncertain|uncertain||
+Especially giving very positive feedback about pagination and the checkout process, which were the main concerns of the design process.|uncertain|uncertain|uncertain|uncertain||
+Also their average time required for purchasing an item for the first time was considerably low, around 1:50 minutes.|uncertain|uncertain|uncertain|uncertain||
+In addition, they liked the whole look and feel of the web-shop, although some reported missing some visual aid to understand the behavior of certain elements, such as the category navigation.|uncertain|uncertain|uncertain|uncertain||
+In short, participants considered it very easy to operate, which can be translated as a success of the logical design of the system.|uncertain|uncertain|uncertain|uncertain||
+The negative evaluation responds to missing features rather than bad design or implementation.|development process|QA|issue|issue||
+The animation on AJAX operations was already planned and the implementation was always taking into account this issue, although it had never enough priority to be implemented.|uncertain|uncertain|uncertain|uncertain||
+Also the category navigation menu is missing feedback from a designer, so it still has a very basic design, enough to be operative.|uncertain|uncertain|uncertain|uncertain||
+6.3 Performance tests|development process|QA|testing|testing||
+Constantly during the project development, the tool Chrome DevTools was used to check the performance of the web-shop, paying special attention to repeated calls or some unexpected behavior resulting from a flaw in the software.|development process|QA|risk|risk||
+This way it was possible to detect a bug in the endless scroll for the product list, which executed repeated calls to the web application server even when there were no more product available.|development process|QA|issue|issue||
+Also some methods with high response times could be fine-tuned with this tool.|uncertain|uncertain|uncertain|uncertain||
+Another tool from Google, PageSpeed Insights, is an online performance test that analyzes the web page looking for elements that may affect its fast execution, such as resources that may unnecessary block the page.|development process|development practice|development practice|development practice||
+This test suggested to use minified versions of the JavaScript and CSS files, which was an easy task thanks to Play Framework built-in support.|system|structure|s-implementation|s-techsolution||
+It also reported that there were too many JavaScript and CSS files being fetched before the page could even be loaded, which meant that the browser had to wait until the last file was fetched in order to allow the user take control of it.|development process|QA|issue|issue||
+It was necessary to find a solution for this, because in order to make the system’s CoffeeScript more understandable for the developer, the code was split into several files and classes, which in some cases raised the amount of files fetched to more than ten.|development process|QA|issue|issue||
+The best way to face this issue was to use RequireJS, an asynchronously module and file loader for JavaScript files, that allowed to fetch a JavaScript file in the background first, and then load all its dependencies in parallel.|development process|QA|issue|issue||
+Although it required a bit of effort to integrate with the current code, the results were very satisfactory.|uncertain|uncertain|uncertain|uncertain||
+It is also worth mentioning that almost all third-party client-side libraries are being fetched from CDNJS, a community-driven CDN22 for web libraries that allows to decrease the loading time considerably.|system|structure|s-implementation|s-techsolution||
+A load test was also performed against the system to check the maximum operating capacity and detect bottlenecks.|development process|QA|testing|testing||
+As explained in the Physical Design section, both the web application and the data tier are scalable systems, although Heroku needs to be scaled up under demand.|system|structure|s-architecture|s-architecture||directive
+Therefore the bottleneck should theoretically be located in the web application tier.|system|structure|s-architecture|s-architecture|rationale|directive
+The test was executed with Blitz, a very interesting tool that allows to easily integrate load testing in the Continuous Integration process, although in this case only the online tool provided in their website is going to be used for these one-time tests.|development process|QA|testing|testing||
+A first test with a duration of one minute, going from 1 to 250 concurrent users, will serve to test the regular configuration of the system, which consists of a single processing unit with 512MB of memory RAM in Heroku.|development process|QA|testing|testing||
+After repeating the same test severals time to check for anomalies, the average results show how the web application has no problems with light pages (e.g. a product detail page), although the response time is not stable, which suggests that might have problems with a bigger amount of users (see Figure 6.7).|development process|QA|testing|testing||
+On the other hand, heavier pages like any product list, have grave problems with memory, which starts failing with around 170 concurrent users, and then Heroku keeps serving a “503 Service Unavailable” error.|development process|QA|issue|issue||
+This is more prominent as the number of displayed products increases, being the best example the home page where all products are listed.|uncertain|uncertain|uncertain|uncertain||
+In this case, the memory fails before reaching 100 users.|development process|QA|issue|issue||
+This problem has two solutions: either the number of processing units is increased, so the load can be distributed and units can be replaced when they fail, or the unit can be upgraded to have double memory.|development process|QA|issue|issue||
+If the number of processing units is increased by one, having then two units, then the product detail page shows stable responses and the product list page with few products has no more memory problems, but the home page is still having trouble, this time at 170 concurrent users (see Figure 6.8).|development process|QA|issue|issue||
+Increasing up to four processing units solves the problem, but still 10% of the responses end up exceeding 1.000 milliseconds.|development process|QA|issue|issue||
+This memory issue may be related to a memory leak from Play Framework or from the same application, but in any case probably has a solution that should be found in order to increase the performance of the system.|development process|QA|issue|issue||
+Lastly, a load of 1.000 concurrent users during 3 minutes was tested against the light product list page with these four processing units (see Figure 6.9).|development process|QA|testing|testing||
+The results are completely satisfactory, with very stable responses except for one timeout period after the first minute, which could be related to Heroku reacting to the load or simply isolated network problems.|development process|QA|testing|testing||
+Here the average response time was of 58 milliseconds, which is more or less the average of the whole web-shop when no bigger issues are affecting the performance.|development process|QA|testing|testing||
+Appendix B Product Backlog|document organisation|document organisation|document organisation|document organisation||
+General structure of a user story described in this document:|document organisation|document organisation|document organisation|document organisation||
+{User story name}: As a {role}, I want {goal}, so that {benefit} ({priority}).|non-information|non-information|non-information|non-information||
+B.1 Functional Requirements|requirement|r-general|r-general|r-general||
+B.1.1 Browse Products|requirement|feature|feature|feature||
+List products|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+As a customer, I want to list all products of the shop (1).|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+Filter by category|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+As a customer, I want to see only those products that belong to a particular category and any category descendant, so that I can narrow down the list to what fits best my needs (2).|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour|rationale|
+Filter by price|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+As a customer, I want to see only those products from the product list which prices fall within a specific price range, so that I can narrow down the list to best fit my economic requirements (3).|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour|rationale|
+Filter by color|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+As a customer, I want to see only those products from the product list which main color matches any of the colors I selected, so that I can narrow down the list to best fit my liking (4).|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour|rationale|
+Sort by name|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+As a customer, I want to sort the products from the product list by their name in an ascendant or descendant order (9).|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+Sort by price|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+As a customer, I want to sort the products from the product list by their price in an ascendant or descendant order (8).|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+Pagination|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+The product list needs to be displayed divided into pages and the customer should be given the ability to browse through them (3).|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||directive
+Product detail|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+As a customer, I want to see all information regarding a particular product and its variants, so that I can make a better decision about buying it (1).|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour|rationale|
+Breadcrumb|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+As a customer, I want to be informed of my location inside the category tree via a breadcrumb, so that it can help me to navigate and have a better understanding of the web-shop structure (6).|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour|rationale|
+Empty list message|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+As a customer, I want to be informed with an informative message when a product list request has no results (5).|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+Not found message|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+As a customer, I want to be informed with an informative message when a category or product I requested cannot be found (10).|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+B.1.2 Purchase Products|requirement|feature|feature|feature||
+Add item to cart:|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+As a customer, I want to add a particular product to the shopping cart, so that I can buy it with the next order (1).|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour|rationale|
+Update item in cart|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+As a customer, I want to change the number of units of a particular item in the shopping cart, so that I can buy a different quantity of the product with the next order (6).|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour|rationale|
+Remove item from cart|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+As a customer, I want to remove a particular item from the shopping cart, so that I do not buy it with the next order (3).|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour|rationale|
+Place order|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+As a customer, I want to place an order, so that I can actually buy the items in my shopping cart (2).|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour|rationale|
+Payment:|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+As a customer, I want to be able to pay online my orders, so that I can pay immediately the moment I buy them instead of using other possibly unpleasant billing options (4)|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour|rationale|
+List orders|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+As a registered customer, I want to see a list of my orders, so that I can see all the purchases I did in the past (5).|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour|rationale|
+Mini cart|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+As a customer, I want to be able to see my current shopping cart from any page via a so-called mini-cart, so that I can always be aware of its contents and pricing details (5).|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour|rationale|
+B.1.3 User Management|requirement|feature|feature|feature||
+As an anonymous customer, I want to sign up a new customer account, so that I can place orders more easily and take advantage of many other benefits (4).|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour|rationale|
+Log in|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+As an anonymous customer, I want to log in with an existing customer account, so that I take advantage of the benefits of being a registered customer (4).|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour|rationale|
+Log out|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+As a registered customer, I want to logout from my customer account, so that nobody else can use it from the same machine (5).|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour|rationale|
+Recover password|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+As an anonymous customer, I want to be able to recover my password, so that I can log in with my account when I forget my current password (7).|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour|rationale|
+Update account|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+As a registered customer, I want to update my personal data such as the email address used (6).|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+Change password:|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+As a registered customer, I want to change my current password to another one of my choice (5).|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+Add address|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+As a registered customer, I want to add a postal address to my address book, so that I can select it as shipping or billing address when placing an order (5)|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour|rationale|
+Update address|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+As a registered customer, I want to update the data of a particular postal address from my address book, so that it corresponds to my current situation (6).|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour|rationale|
+Remove address|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour||
+As a registered customer, I want to remove a particular postal address from my address book, so that I cannot longer select it when placing an order (5).|requirement|functionality & behaviour|functionality & behaviour|functionality & behaviour|rationale|
+B.2 Non-Functional Requirements|requirement|non-functional|non-functional|non-functional||
+B.2.1 Usability|requirement|non-functional|non-functional|non-functional||
+Understandability|requirement|non-functional|non-functional|non-functional||
+As a developer, I want to identify and understand a particular business logic code of the template in less than 1 person-hour (2).|requirement|non-functional|non-functional|non-functional||
+Learnability|requirement|non-functional|non-functional|non-functional||
+As a developer, I want to learn how the application is structured and how I can modify and extend it to build my own web-shop in less than 8 person-hour (3).|requirement|non-functional|non-functional|non-functional||
+Operability|requirement|non-functional|non-functional|non-functional||
+As a customer, I want to learn how to purchase an item for the first time in less than 5 minutes (7).|requirement|non-functional|non-functional|non-functional||
+Likeability:|requirement|non-functional|non-functional|non-functional||
+The template should achieve an average of 7 out of 10 points from users when asked of how much do they like it (10).|requirement|non-functional|non-functional|non-functional||directive
+B.2.2 Maintainability|requirement|non-functional|non-functional|non-functional||
+Testability:|requirement|non-functional|non-functional|non-functional||
+As a developer, I want to be able to test any new feature of my web application with unit, integration and acceptance tests, in less than 2 person-hour (4).|requirement|non-functional|non-functional|non-functional||
+Stability|requirement|non-functional|non-functional|non-functional||
+As a developer, I want to be able to safely change the set of data fetched from the platform without affecting the proper functioning of the template, at least in 95% of the cases (6).|requirement|non-functional|non-functional|non-functional||
+Changeability|requirement|non-functional|non-functional|non-functional||
+As a developer, I want to be able to perform simple changes on user interface elements of the template in less than 10 minutes (4).|requirement|non-functional|non-functional|non-functional||
+B.2.3 FUNCTIONABILITY  |requirement|non-functional|non-functional|non-functional||
+Security|requirement|non-functional|non-functional|non-functional||
+The system must block any external attacker from reading or modifying sensitive information (6).|requirement|non-functional|non-functional|non-functional||directive
+Compliance|requirement|non-functional|non-functional|non-functional||
+The system must avoid to store or process any payment data. (2)|requirement|non-functional|non-functional|non-functional||directive
+SEO-Friendly|requirement|non-functional|non-functional|non-functional||
+As a merchant, I want my web-shop with a SEO-friendly URL structure, so that my web-shop can improve its ranking position in Internet search engines (8).|requirement|non-functional|non-functional|non-functional|rationale|
+User-Friendly|requirement|non-functional|non-functional|non-functional||
+As a customer, I want the web-shop with a human-readable URL structure, so that I can identify the type of content before visiting the web page|requirement|non-functional|non-functional|non-functional|rationale|

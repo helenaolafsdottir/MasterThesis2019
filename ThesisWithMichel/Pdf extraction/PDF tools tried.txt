@@ -1,0 +1,10 @@
+Text and images:
+PyMuPDF (Fitz) - results as python dictionaries, very easy to manipulate
+pdfminer - not perfect results, image extractor didn't work
+PyPDF2 - Simple tool, bad results
+PDFToTree - Windows troubles, developed for Linux
+Online tool: PDFX (was able to identify some structural elements in some documents, but also missed a lot)
+
+Tables:
+Tabular 
+PyMuPDF (Fitz) - Did not get this to work

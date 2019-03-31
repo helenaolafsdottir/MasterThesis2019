@@ -1,0 +1,8 @@
+This is a systematic mapping study (they review a bunch of literature and summarize what has been done in this field, and how. 
+They then identify possibilities of future related work.
+
+They group the studies based on their text analysis technique: Search and information retrieval, NLP, clustering, classification,..
+
+As the title indicates, all the studies are related to software architecture and text analysis techniques. They do not mention any study that does
+NLP, IE, clustering or classification on SADs (but also don't mention that possibility as implications for future researchers).
+
